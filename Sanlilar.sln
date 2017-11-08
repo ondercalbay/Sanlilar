@@ -1,10 +1,31 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.15
+VisualStudioVersion = 15.0.27004.2006
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sanlilar.WebUIAdmin", "Sanlilar.WebUIAdmin\Sanlilar.WebUIAdmin.csproj", "{069F98B2-059F-426E-BA5B-538B0997D8EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sanlilar.WebUITermalOtel", "Sanlilar.WebUITermalOtel\Sanlilar.WebUITermalOtel.csproj", "{8A2DC6A8-CBAD-478D-9A30-89E534344BF0}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{069F98B2-059F-426E-BA5B-538B0997D8EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{069F98B2-059F-426E-BA5B-538B0997D8EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{069F98B2-059F-426E-BA5B-538B0997D8EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{069F98B2-059F-426E-BA5B-538B0997D8EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A2DC6A8-CBAD-478D-9A30-89E534344BF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A2DC6A8-CBAD-478D-9A30-89E534344BF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A2DC6A8-CBAD-478D-9A30-89E534344BF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A2DC6A8-CBAD-478D-9A30-89E534344BF0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F6D9DD7B-86C2-4F62-BBDE-7878E3CF96A6}
 	EndGlobalSection
 EndGlobal
