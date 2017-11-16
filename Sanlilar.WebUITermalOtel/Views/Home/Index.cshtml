@@ -22,44 +22,27 @@
             <!-- filters start -->
             <div class="sorting-filters text-center mb-20 d-flex justify-content-center">
                 <form class="form-inline">
-                    <div class="form-group">
+                    <div class="form-group col-md-4">
+                        <label>İsim</label>
+                        <input type="text" maxlength="100" class="form-control" />
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label>Telefon</label>
+                        <input type="tel" maxlength="50" class="form-control" />
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label>E-Posta</label>
+                        <input type="email" maxlength="50" class="form-control" />
+                    </div>
+                    <div class="form-group col-md-4">
                         <label>Giriş Tarihi:</label>
                         <input type="date" class="form-control">
                     </div>
-                    <div class="form-group ml-1">
+                    <div class="form-group col-md-4">
                         <label>Çıkış Tarihi:</label>
                         <input type="date" class="form-control">
-                    </div>
-                    <div class="form-group ml-1">
-                        <label>Oda Tipi:</label>
-                        <select class="form-control">
-                            <option selected="selected">1 Odalı</option>
-                            <option>2 Odalı</option>
-                            <option>3 Odalı</option>
-                        </select>
-                    </div>
-                    <div class="form-group ml-1">
-                        <label>Telefon</label>
-                        <select class="form-control">
-                            <option selected="selected">1 Adult</option>
-                            <option>2 Adults</option>
-                            <option>3 Adults</option>
-                            <option>4 Adults</option>
-                            <option>5 Adults</option>
-                            <option>6 Adults</option>
-                        </select>
-                    </div>
-                    <div class="form-group ml-1">
-                        <label>Childs</label>
-                        <select class="form-control">
-                            <option selected="selected">1 Child</option>
-                            <option>2 Childs</option>
-                            <option>3 Childs</option>
-                            <option>4 Childs</option>
-                            <option>5 Childs</option>
-                            <option>6 Childs</option>
-                        </select>
-                    </div>
+                    </div>                   
+ 
                 </form>
             </div>
             <!-- filters end -->
@@ -70,7 +53,7 @@
         <div class="row">
             <div class="col-12">
                 <form class="text-center">
-                    <button type="submit" class="btn btn-lg btn-gray-transparent btn-animated margin-clear">Book Now <i class="fa fa-check"></i></button>
+                    <button type="submit" class="btn btn-lg btn-gray-transparent btn-animated margin-clear">Rezerve Et<i class="fa fa-check"></i></button>
                 </form>
             </div>
         </div>
