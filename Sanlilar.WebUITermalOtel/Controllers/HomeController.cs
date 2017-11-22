@@ -37,7 +37,7 @@ namespace Sanlilar.WebUITermalOtel.Controllers
         [Route("/Eynal")]
         public ActionResult Eynal()
         {
-            return View();
+            return View(sayfaManager.Get(EnuSayfaTipleri.Termal_Eynal));
         }
 
         [Route("/Rezervasyon")]
@@ -49,14 +49,7 @@ namespace Sanlilar.WebUITermalOtel.Controllers
         [Route("/Iletisim")]
         public ActionResult Iletisim()
         {
-            return View();
-        }
-
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
+            return View(sayfaManager.Get(EnuSayfaTipleri.Termal_Iletisim));
         }
     }
 }

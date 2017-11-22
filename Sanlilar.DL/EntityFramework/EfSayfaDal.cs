@@ -34,6 +34,7 @@ namespace Sanlilar.DL.EntityFramework
         {
             return _context.Sayfalar.Where(t =>
              (filter.Id == 0 || t.Id == filter.Id) &&
+             (filter.SayfaTipi ==  EnuSayfaTipleri.Seciniz || t.SayfaTipi == filter.SayfaTipi) &&
              t.Aktif == true).ToList();
         }
 
