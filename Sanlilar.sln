@@ -1,13 +1,23 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2006
+VisualStudioVersion = 15.0.27004.2009
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sanlilar.WebUIAdmin", "Sanlilar.WebUIAdmin\Sanlilar.WebUIAdmin.csproj", "{069F98B2-059F-426E-BA5B-538B0997D8EA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sanlilar.WebUITermalOtel", "Sanlilar.WebUITermalOtel\Sanlilar.WebUITermalOtel.csproj", "{8A2DC6A8-CBAD-478D-9A30-89E534344BF0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tema", "Tema\Tema.csproj", "{C4C18F04-DE83-4B4C-9A28-6B7644A0F2C8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sanlilar.BL", "Sanlilar.BL\Sanlilar.BL.csproj", "{B5CE272E-6F04-4F63-88D3-4859AD5F7784}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sanlilar.IL", "Sanlilar.IL\Sanlilar.IL.csproj", "{17B73E6B-FAE1-4007-8E40-35C050123A6D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sanlilar.DL", "Sanlilar.DL\Sanlilar.DL.csproj", "{FE69ACAC-8377-4ADE-8EB7-07510C7B869C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sanlilar.Entity", "Sanlilar.Entity\Sanlilar.Entity.csproj", "{DF86CA86-6AE1-4FFE-8ACF-9E6F169C52E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sanlilar.Dto", "Sanlilar.Dto\Sanlilar.Dto.csproj", "{5B05A7C6-690D-453C-90DB-D65C25DBC78D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +37,26 @@ Global
 		{C4C18F04-DE83-4B4C-9A28-6B7644A0F2C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C4C18F04-DE83-4B4C-9A28-6B7644A0F2C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C4C18F04-DE83-4B4C-9A28-6B7644A0F2C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5CE272E-6F04-4F63-88D3-4859AD5F7784}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5CE272E-6F04-4F63-88D3-4859AD5F7784}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5CE272E-6F04-4F63-88D3-4859AD5F7784}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5CE272E-6F04-4F63-88D3-4859AD5F7784}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17B73E6B-FAE1-4007-8E40-35C050123A6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17B73E6B-FAE1-4007-8E40-35C050123A6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17B73E6B-FAE1-4007-8E40-35C050123A6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17B73E6B-FAE1-4007-8E40-35C050123A6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE69ACAC-8377-4ADE-8EB7-07510C7B869C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE69ACAC-8377-4ADE-8EB7-07510C7B869C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE69ACAC-8377-4ADE-8EB7-07510C7B869C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE69ACAC-8377-4ADE-8EB7-07510C7B869C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF86CA86-6AE1-4FFE-8ACF-9E6F169C52E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF86CA86-6AE1-4FFE-8ACF-9E6F169C52E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF86CA86-6AE1-4FFE-8ACF-9E6F169C52E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF86CA86-6AE1-4FFE-8ACF-9E6F169C52E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B05A7C6-690D-453C-90DB-D65C25DBC78D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B05A7C6-690D-453C-90DB-D65C25DBC78D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B05A7C6-690D-453C-90DB-D65C25DBC78D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B05A7C6-690D-453C-90DB-D65C25DBC78D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

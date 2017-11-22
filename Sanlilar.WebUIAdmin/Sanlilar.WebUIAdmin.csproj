@@ -46,6 +46,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
@@ -143,6 +149,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SayfalarController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -192,9 +199,9 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Sayfalar\Index.cshtml" />
+    <Content Include="Views\Sayfalar\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -203,6 +210,28 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sanlilar.BL\Sanlilar.BL.csproj">
+      <Project>{B5CE272E-6F04-4F63-88D3-4859AD5F7784}</Project>
+      <Name>Sanlilar.BL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sanlilar.DL\Sanlilar.DL.csproj">
+      <Project>{FE69ACAC-8377-4ADE-8EB7-07510C7B869C}</Project>
+      <Name>Sanlilar.DL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sanlilar.Dto\Sanlilar.Dto.csproj">
+      <Project>{5B05A7C6-690D-453C-90DB-D65C25DBC78D}</Project>
+      <Name>Sanlilar.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sanlilar.Entity\Sanlilar.Entity.csproj">
+      <Project>{DF86CA86-6AE1-4FFE-8ACF-9E6F169C52E4}</Project>
+      <Name>Sanlilar.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sanlilar.IL\Sanlilar.IL.csproj">
+      <Project>{17B73E6B-FAE1-4007-8E40-35C050123A6D}</Project>
+      <Name>Sanlilar.IL</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

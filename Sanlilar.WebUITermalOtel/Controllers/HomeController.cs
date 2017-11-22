@@ -1,20 +1,53 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using Sanlilar.BL;
+using Sanlilar.DL.EntityFramework;
+using Sanlilar.Dto;
+using Sanlilar.Entity;
+using Sanlilar.IL;
 using System.Web.Mvc;
 
 namespace Sanlilar.WebUITermalOtel.Controllers
 {
     public class HomeController : Controller
     {
-
+        ISayfaManager sayfaManager = new SayfaManager(new EfSayfaDal());
+        [Route("/")]
         public ActionResult Index()
         {
             return View();
         }
-        [Route("/Anasayfa")]
-        public ActionResult Index2()
+
+        [Route("/Hakkimizda")]
+        public ActionResult Hakkimizda()
+        {            
+            return View(sayfaManager.Get(EnuSayfaTipleri.Termal_Hakkimizda));
+        }
+
+        [Route("/Odalarimiz")]
+        public ActionResult Odalarimiz()
+        {
+            return View();
+        }
+
+        [Route("/Galeri")]
+        public ActionResult Galeri()
+        {
+            return View();
+        }
+
+        [Route("/Eynal")]
+        public ActionResult Eynal()
+        {
+            return View();
+        }
+
+        [Route("/Rezervasyon")]
+        public ActionResult Rezervasyon()
+        {
+            return View();
+        }
+
+        [Route("/Iletisim")]
+        public ActionResult Iletisim()
         {
             return View();
         }
@@ -22,13 +55,6 @@ namespace Sanlilar.WebUITermalOtel.Controllers
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
 
             return View();
         }
