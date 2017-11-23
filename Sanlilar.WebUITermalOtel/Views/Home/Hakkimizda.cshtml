@@ -5,4 +5,32 @@
     Layout = "~/Views/Shared/_Layout1.cshtml";
 }
 
-@Html.DisplayFor(model => model.Html)
+<!-- Page Title
+============================================= -->
+<section id="page-title">
+
+    <div class="container clearfix">
+        <h1>HAKKIMIZDA</h1>
+        <span></span>
+        <ol class="breadcrumb">
+            <li><a href="/">Anasayfa</a></li>
+            <li class="active">Hakkımızda</li>
+        </ol>
+    </div>
+</section><!-- #page-title end -->
+
+<section id="slider" class="boxed-slider">
+    <div class="container clearfix">
+        <a href="#">            
+            <img src="/images/Site/hakkimizda_ust.png" />
+        </a>
+    </div>
+</section>
+
+<section id="content">
+    <div class="content-wrap">
+        <div class="container clearfix">
+            @Html.Raw(Model.Html)
+        </div>
+    </div>
+</section>

@@ -3,102 +3,114 @@
     ViewBag.Title = "Odalarimiz";
     Layout = "~/Views/Shared/_Layout1.cshtml";
 }
+<link href="/Content/Thema/Canvas/nivo-slider.css" rel="stylesheet" />
 
-<h2>Odalarimiz</h2>
+<!-- Page Title
+============================================= -->
+<section id="page-title">
 
-<div class="col_one_third">
-    <div class="feature-box fbox-small fbox-plain" data-animate="fadeIn">
-        <div class="fbox-icon">
-            <a href="#"><i class="icon-phone2"></i></a>
-        </div>
-        <h3>Responsive Layout</h3>
-        <p>Powerful Layout with Responsive functionality that can be adapted to any screen size.</p>
+    <div class="container clearfix">
+        <h1>ODALARIMIZ</h1>
+        <span>Konforlu</span>
+        <ol class="breadcrumb">
+            <li><a href="/">Anasayfa</a></li>
+            <li class="active">Odalarımız</li>
+        </ol>
     </div>
-</div>
+</section><!-- #page-title end -->
 
-<div class="col_one_third">
-    <div class="feature-box fbox-small fbox-plain" data-animate="fadeIn" data-delay="200">
-        <div class="fbox-icon">
-            <a href="#"><i class="icon-eye"></i></a>
+<section id="slider" class="boxed-slider">
+
+    <div class="container clearfix">
+        <div class="nivoSlider">
+            <img src="~/images/Site/Slider/Odalarimiz/1.jpg" alt="Slider 1" title="#nivocaption1" />
+            <img src="/images/Site/Slider/Odalarimiz/2.jpg" alt="Slider 2" title="#nivocaption1" />
+            <img src="/images/Site/Slider/Odalarimiz/7.jpg" alt="Slider 3" title="#nivocaption1" />
+            <img src="/images/Site/Slider/Odalarimiz/3.jpg" alt="Slider 4" title="#nivocaption2" />
+            <img src="~/images/Site/Slider/Odalarimiz/6.jpg" alt="Slider 5" title="#nivocaption2" />
+            <img src="/images/Site/Slider/Odalarimiz/8.jpg" alt="Slider 6" title="#nivocaption2" />
+            <img src="/images/Site/Slider/Odalarimiz/9.jpg" alt="Slider 7" title="#nivocaption3" />
+            <img src="/images/Site/Slider/Odalarimiz/10.jpg" alt="Slider 8" title="#nivocaption4" />
+            <img src="/images/Site/Slider/Odalarimiz/4.jpg" alt="Slider 9" title="#nivocaption4" />
+            <img src="/images/Site/Slider/Odalarimiz/5.jpg" alt="Slider 10" title="#nivocaption4" />
         </div>
-        <h3>Retina Ready Graphics</h3>
-        <p>Looks beautiful &amp; ultra-sharp on Retina Displays with Retina Icons, Fonts &amp; Images.</p>
-    </div>
-</div>
 
-<div class="col_one_third col_last">
-    <div class="feature-box fbox-small fbox-plain" data-animate="fadeIn" data-delay="400">
-        <div class="fbox-icon">
-            <a href="#"><i class="icon-star2"></i></a>
+        <div id="nivocaption1" class="nivo-html-caption">Geniş ve Konforlu Salon</div>
+        <div id="nivocaption2" class="nivo-html-caption">Tüm ihtayaçlarınızı karşılayacak mutfak gereçleri</div>
+        <div id="nivocaption3" class="nivo-html-caption">Çift kişilik yataklar</div>
+        <div id="nivocaption4" class="nivo-html-caption">Doğal Termal sulu küvetler.</div>
+
+    </div>
+
+</section>
+
+<section id="content">
+    <div class="content-wrap">
+        <div class="container clearfix">
+
+            <div class="col_one_third">
+                <div class="feature-box fbox-small fbox-plain" data-animate="fadeIn">
+                    <div class="fbox-icon">
+                        <a href="#"><i class="icon-eye"></i></a>
+                    </div>
+                    <h3>Konfor</h3>
+                    <p>Rahat, konforlu ve huzur içerisinde olmanız için tüm detayları düşündük.</p>
+                </div>
+            </div>
+
+            <div class="col_one_third">
+                <div class="feature-box fbox-small fbox-plain" data-animate="fadeIn" data-delay="200">
+                    <div class="fbox-icon">
+                        <a href="#"><i class="icon-fire"></i></a>
+                    </div>
+                    <h3>Termal</h3>
+                    <p>Kaplıcamızdaki tüm kapalı mekanlar jeotermal ısıtma sistemi ile ısıtılmakta ve apartların tamamında termal sulu özel yapım küvetli banyo mevcuttur.</p>
+                </div>
+            </div>
+
+            <div class="col_one_third col_last">
+                <div class="feature-box fbox-small fbox-plain" data-animate="fadeIn" data-delay="800">
+                    <div class="fbox-icon">
+                        <a href="#"><i class="icon-params"></i></a>
+                    </div>
+                    <h3>Araç Gereç</h3>
+                    <p> Apartların tamamında klima, televizyon, buzdolabı, ocak, tencere vs. tüm mutfak malzemeleri, saç kurutma ve internet bulunmaktadır. Alt katlar verandalı üst katlar balkonludur.</p>
+                </div>
+            </div>
+
+            <div class="clear"></div>
+
+            <div class="col_one_third">
+                <div class="feature-box fbox-small fbox-plain" data-animate="fadeIn" data-delay="1000">
+                    <div class="fbox-icon">
+                        <a href="#"><i class="icon-leaf"></i></a>
+                    </div>
+                    <h3>Doğanın İçinden</h3>
+                    <p>Apartlarımız doğa ile iç içe oluşundan dolayı bol oksijenli yürüyüşler yapabilirsiniz.</p>
+                </div>
+            </div>
+
+            <div class="col_one_third">
+                <div class="feature-box fbox-small fbox-plain" data-animate="fadeIn" data-delay="400">
+                    <div class="fbox-icon">
+                        <a href="#"><i class="icon-star2"></i></a>
+                    </div>
+                    <h3>Alt Katlar</h3>
+                    <p>Alt Katlarda salon, mutfak, yatak odası, banyo ve veranda bulunmaktadır.</p>
+                </div>
+            </div>
+
+            <div class="col_one_third col_last">
+                <div class="feature-box fbox-small fbox-plain" data-animate="fadeIn" data-delay="600">
+                    <div class="fbox-icon">
+                        <a href="#"><i class="icon-heart2"></i></a>
+                    </div>
+                    <h3>Üst Katlar</h3>
+                    <p>Üst katlarda salon amerikan mutfak, yatak odası , banyo ve balkon bulunmaktadır.</p>
+                </div>
+            </div>
+
+            <div class="clear"></div>
         </div>
-        <h3>Powerful Performance</h3>
-        <p>Optimized code that are completely customizable and deliver unmatched fast performance.</p>
     </div>
-</div>
-
-<div class="clear"></div>
-
-<div class="col_one_third">
-    <div class="feature-box fbox-small fbox-plain" data-animate="fadeIn" data-delay="600">
-        <div class="fbox-icon">
-            <a href="#"><i class="icon-video"></i></a>
-        </div>
-        <h3>HTML5 Video</h3>
-        <p>Canvas provides support for Native HTML5 Videos that can be added to a Full Width Background.</p>
-    </div>
-</div>
-
-<div class="col_one_third">
-    <div class="feature-box fbox-small fbox-plain" data-animate="fadeIn" data-delay="800">
-        <div class="fbox-icon">
-            <a href="#"><i class="icon-params"></i></a>
-        </div>
-        <h3>Parallax Support</h3>
-        <p>Display your Content attractively using Parallax Sections that have unlimited customizable areas.</p>
-    </div>
-</div>
-
-<div class="col_one_third col_last">
-    <div class="feature-box fbox-small fbox-plain" data-animate="fadeIn" data-delay="1000">
-        <div class="fbox-icon">
-            <a href="#"><i class="icon-fire"></i></a>
-        </div>
-        <h3>Endless Possibilities</h3>
-        <p>Complete control on each &amp; every element that provides endless customization possibilities.</p>
-    </div>
-</div>
-
-<div class="clear"></div>
-
-<div class="col_one_third nobottommargin">
-    <div class="feature-box fbox-small fbox-plain" data-animate="fadeIn" data-delay="1200">
-        <div class="fbox-icon">
-            <a href="#"><i class="icon-bulb"></i></a>
-        </div>
-        <h3>Light &amp; Dark Color Schemes</h3>
-        <p>Change your Website's Primary Scheme instantly by simply adding the dark class to the body.</p>
-    </div>
-</div>
-
-<div class="col_one_third nobottommargin">
-    <div class="feature-box fbox-small fbox-plain" data-animate="fadeIn" data-delay="1400">
-        <div class="fbox-icon">
-            <a href="#"><i class="icon-heart2"></i></a>
-        </div>
-        <h3>Boxed &amp; Wide Layouts</h3>
-        <p>Stretch your Website to the Full Width or make it boxed to surprise your visitors.</p>
-    </div>
-</div>
-
-<div class="col_one_third nobottommargin col_last">
-    <div class="feature-box fbox-small fbox-plain" data-animate="fadeIn" data-delay="1600">
-        <div class="fbox-icon">
-            <a href="#"><i class="icon-note"></i></a>
-        </div>
-        <h3>Extensive Documentation</h3>
-        <p>We have covered each &amp; everything in our Documentation including Videos &amp; Screenshots.</p>
-    </div>
-</div>
-
-<div class="clear"></div>
-
+</section>

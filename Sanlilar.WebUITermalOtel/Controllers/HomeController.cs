@@ -3,6 +3,7 @@ using Sanlilar.DL.EntityFramework;
 using Sanlilar.Dto;
 using Sanlilar.Entity;
 using Sanlilar.IL;
+using System.IO;
 using System.Web.Mvc;
 
 namespace Sanlilar.WebUITermalOtel.Controllers
@@ -18,7 +19,7 @@ namespace Sanlilar.WebUITermalOtel.Controllers
 
         [Route("/Hakkimizda")]
         public ActionResult Hakkimizda()
-        {            
+        {
             return View(sayfaManager.Get(EnuSayfaTipleri.Termal_Hakkimizda));
         }
 
@@ -31,7 +32,9 @@ namespace Sanlilar.WebUITermalOtel.Controllers
         [Route("/Galeri")]
         public ActionResult Galeri()
         {
-            return View();
+            
+                //Directory.EnumerateFiles(Server.MapPath("~/images/Site/galeri"))
+            return View(Directory.GetFiles(Server.MapPath("~/images/Site/galeri")));
         }
 
         [Route("/Eynal")]

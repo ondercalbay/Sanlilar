@@ -1,0 +1,42 @@
+﻿@model IEnumerable<string>
+
+@{
+    ViewBag.Title = "Galeri";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<!-- Page Title
+============================================= -->
+<section id="page-title">
+
+    <div class="container clearfix">
+        <h1>GALERİ</h1>
+        @*<span>Konforlu</span>*@
+        <ol class="breadcrumb">
+            <li><a href="/">Anasayfa</a></li>
+            <li class="active">Galeri</li>
+        </ol>
+    </div>
+</section><!-- #page-title end -->
+
+
+
+<section id="content">
+    <div class="content-wrap">
+        <div class="container clearfix">
+
+            <div class="row">
+                @foreach (var item in Model)
+                {
+                <div class="col-xs-6 col-md-3">
+                    <a href="#" class="thumbnail">
+
+                        <img alt="100%x180" src="/images/Site/galeri/@Path.GetFileName(item)" style="height: 180px; width: 100%; display: block;" />
+                    </a>
+                </div>
+                }
+            </div>
+
+        </div>
+    </div>
+</section>
