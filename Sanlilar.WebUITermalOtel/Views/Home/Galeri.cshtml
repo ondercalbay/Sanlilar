@@ -25,11 +25,11 @@
     <div class="content-wrap">
         <div class="container clearfix">
 
-            <div class="row">
+            <div class="row" data-lightbox="gallery">
                 @foreach (var item in Model)
                 {
                 <div class="col-xs-6 col-md-3">
-                    <a href="#" class="thumbnail">
+                    <a href="/images/Site/galeri/@Path.GetFileName(item)" class="thumbnail" data-lightbox="gallery-item">
 
                         <img alt="100%x180" src="/images/Site/galeri/@Path.GetFileName(item)" style="height: 180px; width: 100%; display: block;" />
                     </a>
