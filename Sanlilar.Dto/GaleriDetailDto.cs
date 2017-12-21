@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Sanlilar.Dto
 {
-    public class Class1
+    public class GaleriDetailDto
     {
+        public string Src { get; set; }
     }
 }

@@ -5,4 +5,23 @@
     Layout = "~/Views/Shared/_Layout1.cshtml";
 }
 
-@Html.DisplayFor(model => model.Html)
+<!-- Page Title
+============================================= -->
+<section id="page-title">
+    <div class="container clearfix">
+        <h1>EYNAL</h1>
+        <span>Kaplıcaları</span>
+        <ol class="breadcrumb">
+            <li><a href="/">Anasayfa</a></li>
+            <li class="active">Eynal</li>
+        </ol>
+    </div>
+</section><!-- #page-title end -->
+
+<section id="content">
+    <div class="content-wrap">
+        <div class="container clearfix">
+            @Html.Raw(Model.Html)
+        </div>
+    </div>
+</section>
