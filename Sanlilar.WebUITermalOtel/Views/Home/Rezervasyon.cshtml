@@ -8,10 +8,17 @@
 <link rel="stylesheet" href="demos/travel/css/datepicker.css" type="text/css" />
 <link rel="stylesheet" href="css/components/timepicker.css" type="text/css" />
 <link rel="stylesheet" href="css/components/daterangepicker.css" type="text/css" />
-
+<script>
+    function SetMinTarih() {
+        document.getElementById("txtGirisTarihi").onchange = function () {
+            var input = document.getElementById("txtCikisTarihi");
+            input.setAttribute("min", this.value);
+        }
+    }
+</script>
 <!-- Page Title
 ============================================= -->
-<section id="page-title">
+<section id="page-title" onload="SetMinTarih();">
 
     <div class="container clearfix">
         <h1>Rezervasyon</h1>
@@ -36,47 +43,47 @@
                     <div class="form-process"></div>
 
                     <div class="col_one_third">
-                        <label for="template-contactform-name">Adınız <small>*</small></label>
+                        <label for="template-contactform-name">ADINIZ SOYADINIZ <small>*</small></label>
                         <input type="text" id="template-contactform-name" name="template-contactform-name" value="" class="sm-form-control required" />
                     </div>
 
                     <div class="col_one_third">
-                        <label for="template-contactform-email">E-Posta Adresiniz<small>*</small></label>
+                        <label for="template-contactform-email">E-POSTA ADRESINIZ<small>*</small></label>
                         <input type="email" id="template-contactform-email" name="template-contactform-email" value="" class="required email sm-form-control" />
                     </div>
 
                     <div class="col_one_third col_last">
-                        <label for="template-contactform-phone">Telefon Numaranız</label>
+                        <label for="template-contactform-phone">TELEFON NUMARANIZ</label>
                         <input type="text" id="template-contactform-phone" name="template-contactform-phone" value="" class="sm-form-control" />
                     </div>
 
                     <div class="col_one_third">
-                        <label for="template-contactform-email">Giriş Tarihi<small>*</small></label>
-                        <input type="text" value="" class="sm-form-control tleft today" placeholder="DD/MM/YYYY">
+                        <label for="template-contactform-email">GİRİŞ TARİHİNİZ<small>*</small></label>
+                        <input type="date" id="txtGirisTarihi" value="" class="sm-form-control tleft today" min="@DateTime.Today.ToString("yyyy-MM-dd")" />
                     </div>
                     <div class="col_one_third col_last">
-                        <label for="template-contactform-phone">Çıkış Tarihi</label>
-                        <input type="text" value="" class="sm-form-control tleft today" placeholder="DD/MM/YYYY">
+                        <label for="template-contactform-phone">ÇIKIŞ TARİHİNİZ</label>
+                        <input type="date" id="txtCikisTarihi" value="" class="sm-form-control tleft today" min="@DateTime.Today.AddDays(1).ToString("yyyy-MM-dd")" />
                     </div>
-                    
+
 
                     <div class="clear"></div>
 
                     @*<div class="col_two_third">
-                        <label for="template-contactform-subject">İletmenizi İstedikleriniz <small>*</small></label>
-                        <input type="text" id="template-contactform-subject" name="template-contactform-subject" value="" class="required sm-form-control" />
-                    </div>*@
+                            <label for="template-contactform-subject">İletmenizi İstedikleriniz <small>*</small></label>
+                            <input type="text" id="template-contactform-subject" name="template-contactform-subject" value="" class="required sm-form-control" />
+                        </div>*@
 
                     @*<div class="col_one_third col_last">
-                        <label for="template-contactform-service">Services</label>
-                        <select id="template-contactform-service" name="template-contactform-service" class="sm-form-control">
-                            <option value="">-- Select One --</option>
-                            <option value="Wordpress">Wordpress</option>
-                            <option value="PHP / MySQL">PHP / MySQL</option>
-                            <option value="HTML5 / CSS3">HTML5 / CSS3</option>
-                            <option value="Graphic Design">Graphic Design</option>
-                        </select>
-                    </div>*@
+                            <label for="template-contactform-service">Services</label>
+                            <select id="template-contactform-service" name="template-contactform-service" class="sm-form-control">
+                                <option value="">-- Select One --</option>
+                                <option value="Wordpress">Wordpress</option>
+                                <option value="PHP / MySQL">PHP / MySQL</option>
+                                <option value="HTML5 / CSS3">HTML5 / CSS3</option>
+                                <option value="Graphic Design">Graphic Design</option>
+                            </select>
+                        </div>*@
 
                     <div class="clear"></div>
 
@@ -90,7 +97,7 @@
                     </div>
 
                     <div class="col_full">
-                        <button name="submit" type="submit" id="submit-button" tabindex="5" value="Submit" class="button button-3d nomargin">Gönder</button>
+                        <button name="submit" type="submit" id="submit-button" tabindex="5" value="Submit" class="button button-3d nomargin">Rezerve Et</button>
                     </div>
 
                 </form>
