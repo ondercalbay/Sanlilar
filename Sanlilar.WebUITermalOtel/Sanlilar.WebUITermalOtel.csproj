@@ -152,6 +152,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\RezervasyonDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -159,6 +160,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\MailTemplate\RezervasyonMailTemplate.html" />
     <Content Include="Content\Thema\Canvas\animate.css" />
     <Content Include="Content\Thema\Canvas\components\bs-datatable.css" />
     <Content Include="Content\Thema\Canvas\components\bs-editable.css" />
@@ -1197,10 +1199,10 @@
     <Content Include="Views\Home\Eynal.cshtml" />
     <Content Include="Views\Home\Rezervasyon.cshtml" />
     <Content Include="Views\Home\Galeri.cshtml" />
+    <Content Include="Views\Home\RezervasyonOnay.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -1210,6 +1212,10 @@
     <ProjectReference Include="..\Sanlilar.BL\Sanlilar.BL.csproj">
       <Project>{B5CE272E-6F04-4F63-88D3-4859AD5F7784}</Project>
       <Name>Sanlilar.BL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sanlilar.CommonLibrary\Sanlilar.CommonLibrary.csproj">
+      <Project>{0594d409-4efa-48b0-950d-682fffdfd40f}</Project>
+      <Name>Sanlilar.CommonLibrary</Name>
     </ProjectReference>
     <ProjectReference Include="..\Sanlilar.DL\Sanlilar.DL.csproj">
       <Project>{FE69ACAC-8377-4ADE-8EB7-07510C7B869C}</Project>

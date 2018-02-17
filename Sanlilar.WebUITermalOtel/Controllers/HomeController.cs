@@ -1,9 +1,13 @@
 ﻿using Sanlilar.BL;
+using Sanlilar.CommonLibrary.Helpers;
 using Sanlilar.DL.EntityFramework;
-using Sanlilar.Dto;
 using Sanlilar.Entity;
 using Sanlilar.IL;
+using Sanlilar.WebUITermalOtel.Models;
+using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Text;
 using System.Web.Mvc;
 
 namespace Sanlilar.WebUITermalOtel.Controllers
@@ -31,8 +35,7 @@ namespace Sanlilar.WebUITermalOtel.Controllers
 
         [Route("/Galeri")]
         public ActionResult Galeri()
-        {
-            
+        {            
                 //Directory.EnumerateFiles(Server.MapPath("~/images/Site/galeri"))
             return View(Directory.GetFiles(Server.MapPath("~/images/Site/galeri")));
         }
@@ -45,6 +48,45 @@ namespace Sanlilar.WebUITermalOtel.Controllers
 
         [Route("/Rezervasyon")]
         public ActionResult Rezervasyon()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Rezervasyon(RezervasyonDto rezervasyonBilgileri)
+        {
+            try
+            {
+                List<Mail> mailler = new List<Mail>();
+                string konu = "Şifa Termal Rezervasyon İstek";
+                Mail mail = new Mail(MailGonderen.sistem, ConfigHelper.Read("RezervasyonMailleri"), "", konu, GetMailStr(rezervasyonBilgileri));
+                mailler.Add(mail);
+                MailHelper.SentMail(mail);
+            }
+            catch (Exception ex)
+            {
+                 
+            }
+            return RedirectToAction("RezervasyonOnay");
+        }
+
+        private string GetMailStr(RezervasyonDto rb)
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append(FileHelper.ReadFile("/Content/MailTemplate/RezervasyonMailTemplate.html"));
+            sb.Replace("{ADSOYAD}", rb.adSoyad);
+            sb.Replace("{EPOSTA}", rb.eposta);
+            sb.Replace("{TELEFON}", rb.telefon);
+            sb.Replace("{GIRISTARIHI}", rb.girisTarihi.ToDateStr());
+            sb.Replace("{CIKISTARIHI}", rb.cikisTarihi.ToDateStr());
+            sb.Replace("{MESAJ}", rb.mesaj);
+
+
+            return sb.ToString();
+        }
+
+        [Route("/RezervasyonOnay")]
+        public ActionResult RezervasyonOnay()
         {
             return View();
         }
