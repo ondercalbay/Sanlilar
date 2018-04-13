@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IGenericManager.cs" />
+    <Compile Include="IKategoriManager.cs" />
     <Compile Include="ISayfaManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

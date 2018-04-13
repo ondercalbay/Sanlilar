@@ -6,5 +6,7 @@ namespace Sanlilar.DL.EntityFramework
     public class SanlilarContext : DbContext
     {
         public DbSet<Sayfa> Sayfalar { get; set; }
+
+        public DbSet<Kategori> Kategoriler { get; set; }
     }
 }

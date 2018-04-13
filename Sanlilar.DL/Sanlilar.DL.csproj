@@ -49,12 +49,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IGenericDal.cs" />
+    <Compile Include="Abstract\IKategoriDal.cs" />
     <Compile Include="Abstract\ISayfaDal.cs" />
+    <Compile Include="EntityFramework\EfKategoriDal.cs" />
     <Compile Include="EntityFramework\EfSayfaDal.cs" />
     <Compile Include="EntityFramework\SanlilarContext.cs" />
     <Compile Include="Migrations\201711221329010_first.cs" />
     <Compile Include="Migrations\201711221329010_first.Designer.cs">
       <DependentUpon>201711221329010_first.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804101959387_Kategoriler.cs" />
+    <Compile Include="Migrations\201804101959387_Kategoriler.Designer.cs">
+      <DependentUpon>201804101959387_Kategoriler.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -72,6 +78,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201711221329010_first.resx">
       <DependentUpon>201711221329010_first.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804101959387_Kategoriler.resx">
+      <DependentUpon>201804101959387_Kategoriler.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

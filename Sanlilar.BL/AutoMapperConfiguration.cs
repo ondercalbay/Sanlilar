@@ -41,6 +41,20 @@ namespace Sanlilar.BL
                 cfg.CreateMap<SayfaEditDto, Sayfa>();
                 cfg.CreateMap<Sayfa, SayfaDetailDto>();
                 cfg.CreateMap<SayfaDetailDto, Sayfa>();
+
+                cfg.CreateMap<Kategori, KategoriListDto>();
+                cfg.CreateMap<KategoriListDto, Kategori>();
+                cfg.CreateMap<Kategori, KategoriEditDto>();
+                cfg.CreateMap<KategoriEditDto, Kategori>();
+                cfg.CreateMap<Kategori, KategoriDetailDto>();
+                cfg.CreateMap<KategoriDetailDto, Kategori>();
+
+                cfg.CreateMap<Urun, UrunListDto>();
+                cfg.CreateMap<UrunListDto, Urun>();
+                cfg.CreateMap<Urun, UrunEditDto>();
+                cfg.CreateMap<UrunEditDto, Urun>();
+                cfg.CreateMap<Urun, UrunDetailDto>();
+                cfg.CreateMap<UrunDetailDto, Urun>();
             }
             );
 

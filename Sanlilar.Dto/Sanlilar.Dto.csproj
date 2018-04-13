@@ -43,10 +43,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GaleriDetailDto.cs" />
+    <Compile Include="KategoriDetailDto.cs" />
+    <Compile Include="KategoriEditDto.cs" />
+    <Compile Include="KategoriListDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SayfaDetailDto.cs" />
     <Compile Include="SayfaEditDto.cs" />
     <Compile Include="SayfaListDto.cs" />
+    <Compile Include="UrunDetailDto.cs" />
+    <Compile Include="UrunEditDto.cs" />
+    <Compile Include="UrunListDto.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Sanlilar.Entity\Sanlilar.Entity.csproj">
