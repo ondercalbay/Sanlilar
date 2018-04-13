@@ -67,7 +67,8 @@ namespace Sanlilar.WebUITermalOtel.Controllers
             {
                  
             }
-            return RedirectToAction("RezervasyonOnay");
+            //return Redirect("/RezervasyonOnay");
+            return RedirectToAction("RezervasyonOnay","Home");
         }
 
         private string GetMailStr(RezervasyonDto rb)

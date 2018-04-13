@@ -10,5 +10,6 @@ namespace Sanlilar.IL
 {
     public interface IKategoriManager : IGenericManager<Kategori, KategoriListDto, KategoriEditDto>
     {
+        KategoriEditDto Get(int? id);
     }
 }

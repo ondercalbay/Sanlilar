@@ -10,6 +10,10 @@ namespace Sanlilar.DL.EntityFramework
     {
         private SanlilarContext _context = new SanlilarContext();
 
+        public EfKategoriDal()
+        {
+        }
+
         public Kategori Add(Kategori ent)
         {
             _context.Kategoriler.Add(ent);

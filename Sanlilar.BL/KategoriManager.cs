@@ -5,6 +5,7 @@ using Sanlilar.Entity;
 using Sanlilar.IL;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Sanlilar.BL
 {
@@ -33,7 +34,16 @@ namespace Sanlilar.BL
 
         public List<KategoriListDto> Get(Kategori filter)
         {
-            return Mapper.Map<List<KategoriListDto>>(_dal.Get(filter));
+            var kategoriler = _dal.Get(filter);
+            var query = kategoriler.Select(i =>
+                 new KategoriListDto
+                 {
+                     Adi = i.Adi,
+                     UstKategoriAdi = Get(i.UstKategoriId).Adi,
+                     Id = i.Id
+                 }
+                );
+            return query.ToList();
         }
 
         public KategoriEditDto Get(int id)
@@ -47,6 +57,22 @@ namespace Sanlilar.BL
             ent.GuncelleyenId = 1;
             ent.GuncellemeZamani = DateTime.Now;
             return Mapper.Map<KategoriEditDto>(_dal.Update(ent));
+        }
+
+        public KategoriEditDto Get(int? id)
+        {
+            if (id == null)
+            {
+                return new KategoriEditDto();
+            }
+            else
+            {
+                int i = Convert.ToInt32(id.ToString());
+                return Mapper.Map<KategoriEditDto>(_dal.Get(i));
+            }
+            
+
+
         }
     }
 }

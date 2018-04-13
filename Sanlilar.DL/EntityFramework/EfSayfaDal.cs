@@ -48,6 +48,8 @@ namespace Sanlilar.DL.EntityFramework
             return Get(new Sayfa { SayfaTipi = sayfaTipi }).FirstOrDefault();
         }
 
+        
+
         public Sayfa Update(Sayfa ent)
         {
             Sayfa newEnt = Get(ent.Id);

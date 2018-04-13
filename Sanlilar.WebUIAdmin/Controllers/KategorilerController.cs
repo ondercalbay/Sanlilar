@@ -4,6 +4,8 @@ using Sanlilar.Dto;
 using Sanlilar.Entity;
 using Sanlilar.IL;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Web.Mvc;
 
 namespace Sanlilar.WebUIAdmin.Controllers
@@ -20,6 +22,9 @@ namespace Sanlilar.WebUIAdmin.Controllers
         // GET: Kategoriler/Edit/5
         public ActionResult Edit(int? id)
         {
+
+
+
             KategoriEditDto editDto;
             if (id == null)
             {
@@ -29,6 +34,16 @@ namespace Sanlilar.WebUIAdmin.Controllers
             {
                 editDto = _manager.Get(Convert.ToInt32(id));
             }
+            IEnumerable<KategoriListDto> kategoriler = _manager.Get(new Kategori());
+            //SanlilarContext _context = new SanlilarContext();
+            //var query = _context.Kategoriler.Where(t =>             
+            //  t.Aktif == true);
+            //query.ToList();
+
+            List<SelectListItem> selectkategoriler = new SelectList(kategoriler, "Id", "Adi", editDto.UstKategoriId).ToList();
+
+            selectkategoriler.Insert(0, new SelectListItem() { Value = "", Text = "Seçiniz" });
+            ViewBag.UstKategoriId = selectkategoriler;
             return View(editDto);
         }
 
