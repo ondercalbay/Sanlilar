@@ -11,17 +11,19 @@ namespace Sanlilar.BL
     public class SayfaManager : ISayfaManager
     {
         private ISayfaDal _dal { get; set; }
-        public SayfaManager(ISayfaDal dal)
+        public int _userId { get; set; }
+        public SayfaManager(int userId, ISayfaDal dal)
         {
+            _userId = userId;
             _dal = dal;
         }
 
         public SayfaEditDto Add(SayfaEditDto editDto)
         {
             Sayfa ent = Mapper.Map<Sayfa>(editDto);
-            ent.EkleyenId = 1;
+            ent.EkleyenId = _userId;
             ent.EklemeZamani = DateTime.Now;
-            ent.GuncelleyenId = 1;
+            ent.GuncelleyenId = _userId;
             ent.GuncellemeZamani = DateTime.Now;
             ent.Aktif = true;
             return Mapper.Map<SayfaEditDto>(_dal.Add(ent));
@@ -29,7 +31,7 @@ namespace Sanlilar.BL
 
         public void Delete(int id)
         {
-            _dal.Delete(id);
+            _dal.Delete(id, _userId);
         }
 
         public List<SayfaListDto> Get(Sayfa filter)
@@ -45,11 +47,8 @@ namespace Sanlilar.BL
         public SayfaEditDto Update(SayfaEditDto editDto)
         {
             Sayfa ent = Mapper.Map<Sayfa>(editDto);
-            ent.EkleyenId = 1;
-            ent.EklemeZamani = DateTime.Now;
-            ent.GuncelleyenId = 1;
+            ent.GuncelleyenId = _userId;
             ent.GuncellemeZamani = DateTime.Now;
-            ent.Aktif = true;
             return Mapper.Map<SayfaEditDto>(_dal.Update(ent));
         }
 

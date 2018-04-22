@@ -8,7 +8,7 @@ namespace Sanlilar.DL.Abstract
 
         Entity Update(Entity ent);
 
-        void Delete(int id);
+        void Delete(int id, int userId);
 
         List<Entity> Get(Entity filter);
 

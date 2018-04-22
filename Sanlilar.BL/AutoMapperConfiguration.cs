@@ -55,6 +55,11 @@ namespace Sanlilar.BL
                 cfg.CreateMap<UrunEditDto, Urun>();
                 cfg.CreateMap<Urun, UrunDetailDto>();
                 cfg.CreateMap<UrunDetailDto, Urun>();
+
+                cfg.CreateMap<Resim, ResimListDto>();
+                cfg.CreateMap<ResimListDto, Resim>();
+                cfg.CreateMap<Resim, ResimEditDto>();
+                cfg.CreateMap<ResimEditDto, Resim>();
             }
             );
 

@@ -23,9 +23,11 @@ namespace Sanlilar.DL.EntityFramework
             return ent;
         }
 
-        public void Delete(int id)
+        public void Delete(int id, int userId)
         {
             var ent = Get(id);
+            ent.GuncelleyenId = userId;
+            ent.GuncellemeZamani = DateTime.Now;
             ent.Aktif = false;
             _context.SaveChanges();
         }
@@ -34,7 +36,7 @@ namespace Sanlilar.DL.EntityFramework
         {
             return _context.Sayfalar.Where(t =>
              (filter.Id == 0 || t.Id == filter.Id) &&
-             (filter.SayfaTipi ==  EnuSayfaTipleri.Seciniz || t.SayfaTipi == filter.SayfaTipi) &&
+             (filter.SayfaTipi == EnuSayfaTipleri.Seciniz || t.SayfaTipi == filter.SayfaTipi) &&
              t.Aktif == true).ToList();
         }
 
@@ -48,7 +50,7 @@ namespace Sanlilar.DL.EntityFramework
             return Get(new Sayfa { SayfaTipi = sayfaTipi }).FirstOrDefault();
         }
 
-        
+
 
         public Sayfa Update(Sayfa ent)
         {

@@ -6,17 +6,13 @@ using System.Linq;
 
 namespace Sanlilar.DL.EntityFramework
 {
-    public class EfKategoriDal : IKategoriDal
+    public class EfUrunDal : IUrunDal
     {
         private SanlilarContext _context = new SanlilarContext();
 
-        public EfKategoriDal()
+        public Urun Add(Urun ent)
         {
-        }
-
-        public Kategori Add(Kategori ent)
-        {
-            _context.Kategoriler.Add(ent);
+            _context.Urunler.Add(ent);
             _context.SaveChanges();
             return ent;
         }
@@ -30,26 +26,26 @@ namespace Sanlilar.DL.EntityFramework
             _context.SaveChanges();
         }
 
-        public List<Kategori> Get(Kategori filter)
+        public List<Urun> Get(Urun filter)
         {
-            var query = _context.Kategoriler.Where(t =>
-           (filter.Id == 0 || t.Id == filter.Id) &&
-           (filter.UstKategoriId == null || t.UstKategoriId == filter.UstKategoriId) &&
-           (filter.Adi == null || t.Adi == filter.Adi) &&
-           t.Aktif == true);
-            return query.ToList();
+            return _context.Urunler.Where(t =>
+             (filter.Id == 0 || t.Id == filter.Id) &&
+             (filter.KategoriId == 0 || t.KategoriId == filter.KategoriId) &&
+             t.Aktif == true).ToList();
         }
 
-        public Kategori Get(int id)
+        public Urun Get(int id)
         {
-            return Get(new Kategori { Id = id }).FirstOrDefault();
+            return Get(new Urun { Id = id }).FirstOrDefault();
         }
 
-        public Kategori Update(Kategori ent)
+        public Urun Update(Urun ent)
         {
-            Kategori newEnt = Get(ent.Id);
+            Urun newEnt = Get(ent.Id);
             newEnt.Adi = ent.Adi;
-            newEnt.UstKategoriId = ent.UstKategoriId;
+            newEnt.Fiyat = ent.Fiyat;
+            newEnt.KategoriId = ent.KategoriId;
+            newEnt.Aciklama = ent.Aciklama;
             newEnt.GuncelleyenId = ent.GuncelleyenId;
             newEnt.GuncellemeZamani = DateTime.Now;
             _context.SaveChanges();

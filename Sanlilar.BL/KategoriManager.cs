@@ -12,16 +12,19 @@ namespace Sanlilar.BL
     public class KategoriManager : IKategoriManager
     {
         private IKategoriDal _dal { get; set; }
-        public KategoriManager(IKategoriDal dal)
+        public int _userId { get; set; }
+        public KategoriManager(int userId,IKategoriDal dal)
         {
+            _userId = userId;
             _dal = dal;
         }
+
         public KategoriEditDto Add(KategoriEditDto editDto)
         {
             Kategori ent = Mapper.Map<Kategori>(editDto);
-            ent.EkleyenId = 1;
+            ent.EkleyenId = _userId;
             ent.EklemeZamani = DateTime.Now;
-            ent.GuncelleyenId = 1;
+            ent.GuncelleyenId = _userId;
             ent.GuncellemeZamani = DateTime.Now;
             ent.Aktif = true;
             return Mapper.Map<KategoriEditDto>(_dal.Add(ent));
@@ -29,7 +32,7 @@ namespace Sanlilar.BL
 
         public void Delete(int id)
         {
-            _dal.Delete(id);
+            _dal.Delete(id,_userId);
         }
 
         public List<KategoriListDto> Get(Kategori filter)
@@ -54,7 +57,7 @@ namespace Sanlilar.BL
         public KategoriEditDto Update(KategoriEditDto editDto)
         {
             Kategori ent = Mapper.Map<Kategori>(editDto);
-            ent.GuncelleyenId = 1;
+            ent.GuncelleyenId = _userId;
             ent.GuncellemeZamani = DateTime.Now;
             return Mapper.Map<KategoriEditDto>(_dal.Update(ent));
         }

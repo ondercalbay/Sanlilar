@@ -3,6 +3,7 @@ using Sanlilar.DL.EntityFramework;
 using Sanlilar.Dto;
 using Sanlilar.Entity;
 using Sanlilar.IL;
+using Sanlilar.WebUIAdmin.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,7 @@ namespace Sanlilar.WebUIAdmin.Controllers
 {
     public class KategorilerController : Controller
     {
-        IKategoriManager _manager = new KategoriManager(new EfKategoriDal());
+        IKategoriManager _manager = new KategoriManager(UserHelper.Id, new EfKategoriDal());
         // GET: Kategoriler
         public ActionResult Index()
         {

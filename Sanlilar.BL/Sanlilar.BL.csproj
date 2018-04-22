@@ -47,8 +47,11 @@
   <ItemGroup>
     <Compile Include="AutoMapperConfiguration.cs" />
     <Compile Include="KategoriManager.cs" />
+    <Compile Include="KullaniciManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResimManager.cs" />
     <Compile Include="SayfaManager.cs" />
+    <Compile Include="UrunManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Sanlilar.DL\Sanlilar.DL.csproj">

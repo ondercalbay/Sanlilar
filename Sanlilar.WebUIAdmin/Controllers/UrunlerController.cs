@@ -9,42 +9,42 @@ using System.Web.Mvc;
 
 namespace Sanlilar.WebUIAdmin.Controllers
 {
-    public class SayfalarController : Controller
+    public class UrunlerController : Controller
     {
-        ISayfaManager _sayfaManager = new SayfaManager(UserHelper.Id,new EfSayfaDal());
+        IUrunManager _UrunManager = new UrunManager(UserHelper.Id, new EfUrunDal());
 
-        // GET: Sayfalar
+        // GET: Urunlar
         public ActionResult Index()
         {
-            return View(_sayfaManager.Get(new Sayfa()));
+            return View(_UrunManager.Get(new Urun()));
         }
 
         public ActionResult Edit(int? id)
         {
-            SayfaEditDto editDto;
+            UrunEditDto editDto;
             if (id == null)
             {
-                editDto = new SayfaEditDto();
+                editDto = new UrunEditDto();
             }
             else
             {
-                editDto = _sayfaManager.Get(Convert.ToInt32(id));
+                editDto = _UrunManager.Get(Convert.ToInt32(id));
             }
             return View(editDto);
         }
 
-        // POST: Sayfalar/Edit/5
+        // POST: Urunlar/Edit/5
         [HttpPost]
-        public ActionResult Edit(SayfaEditDto editDto)
+        public ActionResult Edit(UrunEditDto editDto)
         {
-            ViewBag.Message = "Sayfalar";
+            ViewBag.Message = "Urunlar";
             if (editDto.Id == 0)
             {
-                _sayfaManager.Add(editDto);
+                _UrunManager.Add(editDto);
             }
             else
             {
-                _sayfaManager.Update(editDto);
+                _UrunManager.Update(editDto);
             }
             return RedirectToAction("");
 
@@ -52,7 +52,7 @@ namespace Sanlilar.WebUIAdmin.Controllers
 
 
 
-        // GET: Sayfalar/Delete/5
+        // GET: Urunlar/Delete/5
         public ActionResult Delete(int id)
         {
             return View();

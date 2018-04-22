@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Sanlilar.Entity
 {
-    [Table("AnaKategori", Schema = "Sanlilar")]
+    [Table("AnaKategoriler", Schema = "Sanlilar")]
     public class AltKategori : BaseEntity
     {
 

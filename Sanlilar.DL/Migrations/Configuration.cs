@@ -1,5 +1,6 @@
 namespace Sanlilar.DL.Migrations
 {
+    using Sanlilar.Entity;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -18,6 +19,23 @@ namespace Sanlilar.DL.Migrations
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data.
+
+            context.Kullanicilar.AddOrUpdate(
+              p => p.KullaniciAdi,
+              new Kullanici
+              {
+                  Adi = "admin",
+                  Soyadi = "admin",
+                  KullaniciAdi = "admin",
+                  Sifre = "albay69s",
+                  EPosta = "ondercalbay@hotmail.com",
+                  EkleyenId = 1,
+                  EklemeZamani = DateTime.Now,
+                  GuncelleyenId = 1,
+                  GuncellemeZamani = DateTime.Now,
+                  Aktif = true
+              }
+            );
         }
     }
 }

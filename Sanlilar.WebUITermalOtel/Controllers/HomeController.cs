@@ -14,7 +14,7 @@ namespace Sanlilar.WebUITermalOtel.Controllers
 {
     public class HomeController : Controller
     {
-        ISayfaManager sayfaManager = new SayfaManager(new EfSayfaDal());
+        ISayfaManager sayfaManager = new SayfaManager(0, new EfSayfaDal());
         [Route("/")]
         public ActionResult Index()
         {
@@ -35,8 +35,8 @@ namespace Sanlilar.WebUITermalOtel.Controllers
 
         [Route("/Galeri")]
         public ActionResult Galeri()
-        {            
-                //Directory.EnumerateFiles(Server.MapPath("~/images/Site/galeri"))
+        {
+            //Directory.EnumerateFiles(Server.MapPath("~/images/Site/galeri"))
             return View(Directory.GetFiles(Server.MapPath("~/images/Site/galeri")));
         }
 
@@ -65,10 +65,10 @@ namespace Sanlilar.WebUITermalOtel.Controllers
             }
             catch (Exception ex)
             {
-                 
+
             }
             //return Redirect("/RezervasyonOnay");
-            return RedirectToAction("RezervasyonOnay","Home");
+            return RedirectToAction("RezervasyonOnay", "Home");
         }
 
         private string GetMailStr(RezervasyonDto rb)

@@ -50,9 +50,14 @@
   <ItemGroup>
     <Compile Include="Abstract\IGenericDal.cs" />
     <Compile Include="Abstract\IKategoriDal.cs" />
+    <Compile Include="Abstract\IKullaniciDal.cs" />
+    <Compile Include="Abstract\IResimDal.cs" />
     <Compile Include="Abstract\ISayfaDal.cs" />
+    <Compile Include="Abstract\IUrunDal.cs" />
     <Compile Include="EntityFramework\EfKategoriDal.cs" />
+    <Compile Include="EntityFramework\EfKullaniciDal.cs" />
     <Compile Include="EntityFramework\EfSayfaDal.cs" />
+    <Compile Include="EntityFramework\EfUrunDal.cs" />
     <Compile Include="EntityFramework\SanlilarContext.cs" />
     <Compile Include="Migrations\201711221329010_first.cs" />
     <Compile Include="Migrations\201711221329010_first.Designer.cs">
