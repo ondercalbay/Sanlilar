@@ -21,26 +21,23 @@ namespace Sanlilar.WebUIAdmin.Controllers
         }
 
         // GET: Kategoriler/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(int? id, int? ustKategoriId)
         {
-
-
-
             KategoriEditDto editDto;
             if (id == null)
             {
                 editDto = new KategoriEditDto();
+                if (ustKategoriId != null)
+                {
+                    editDto.UstKategoriId = ustKategoriId;
+                }
             }
             else
             {
                 editDto = _manager.Get(Convert.ToInt32(id));
             }
-            IEnumerable<KategoriListDto> kategoriler = _manager.Get(new Kategori());
-            //SanlilarContext _context = new SanlilarContext();
-            //var query = _context.Kategoriler.Where(t =>             
-            //  t.Aktif == true);
-            //query.ToList();
 
+            IEnumerable<KategoriListDto> kategoriler = _manager.Get(new Kategori());
             List<SelectListItem> selectkategoriler = new SelectList(kategoriler, "Id", "Adi", editDto.UstKategoriId).ToList();
 
             selectkategoriler.Insert(0, new SelectListItem() { Value = "", Text = "Seçiniz" });
@@ -69,7 +66,8 @@ namespace Sanlilar.WebUIAdmin.Controllers
         // GET: Kategoriler/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            _manager.Delete(id);
+            return RedirectToAction("");
         }
 
         // POST: Kategoriler/Delete/5

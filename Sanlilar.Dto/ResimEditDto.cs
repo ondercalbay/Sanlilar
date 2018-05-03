@@ -1,17 +1,20 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Sanlilar.Entity;
+using System.ComponentModel.DataAnnotations;
 
 namespace Sanlilar.Dto
 {
     public class ResimEditDto
     {
+        public int Id { get; set; }
+
         [Required]
-        [MaxLength(50)]
-        public string ElementTipi { get; set; }
+        public EnuElementler ElementTipi { get; set; }
+
+        [Required]
+        public int ElementId { get; set; }
 
         [Required]
         public string ResimYolu { get; set; }
 
-        [Required]
-        public bool AnaResim { get; set; }
     }
 }

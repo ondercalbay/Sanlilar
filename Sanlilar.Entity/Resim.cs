@@ -3,17 +3,17 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Sanlilar.Entity
 {
-    [Table("Resimler", Schema = "Mobilya")]
+    [Table("Resimler", Schema = "Sistem")]
     public class Resim : BaseEntity
     {
         [Required]
-        [MaxLength(50)]
-        public string ElementTipi { get; set; }
+        public EnuElementler ElementTipi { get; set; }
+
+        [Required]
+        public int ElementId { get; set; }
 
         [Required]
         public string ResimYolu { get; set; }
-
-        [Required]
-        public bool AnaResim { get; set; }
+        
     }
 }

@@ -13,7 +13,7 @@ namespace Sanlilar.BL
     {
         private IKategoriDal _dal { get; set; }
         public int _userId { get; set; }
-        public KategoriManager(int userId,IKategoriDal dal)
+        public KategoriManager(int userId, IKategoriDal dal)
         {
             _userId = userId;
             _dal = dal;
@@ -32,7 +32,7 @@ namespace Sanlilar.BL
 
         public void Delete(int id)
         {
-            _dal.Delete(id,_userId);
+            _dal.Delete(id, _userId);
         }
 
         public List<KategoriListDto> Get(Kategori filter)
@@ -41,12 +41,22 @@ namespace Sanlilar.BL
             var query = kategoriler.Select(i =>
                  new KategoriListDto
                  {
-                     Adi = i.Adi,
+                     Adi = GetAdi(i.UstKategoriId, i.Adi),
                      UstKategoriAdi = Get(i.UstKategoriId).Adi,
                      Id = i.Id
                  }
-                );
+                ).OrderBy(i => i.Adi);
             return query.ToList();
+        }
+
+        private string GetAdi(int? ustKategoriId, string adi)
+        {
+            if (ustKategoriId != null)
+            {
+                var ustKategori = Get(ustKategoriId);
+                adi = String.Format("{0} > {1}", GetAdi(ustKategori.UstKategoriId, ustKategori.Adi), adi);
+            }
+            return adi;
         }
 
         public KategoriEditDto Get(int id)
@@ -73,7 +83,7 @@ namespace Sanlilar.BL
                 int i = Convert.ToInt32(id.ToString());
                 return Mapper.Map<KategoriEditDto>(_dal.Get(i));
             }
-            
+
 
 
         }

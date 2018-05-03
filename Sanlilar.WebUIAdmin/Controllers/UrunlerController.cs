@@ -5,6 +5,8 @@ using Sanlilar.Entity;
 using Sanlilar.IL;
 using Sanlilar.WebUIAdmin.Helpers;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Web.Mvc;
 
 namespace Sanlilar.WebUIAdmin.Controllers
@@ -12,6 +14,7 @@ namespace Sanlilar.WebUIAdmin.Controllers
     public class UrunlerController : Controller
     {
         IUrunManager _UrunManager = new UrunManager(UserHelper.Id, new EfUrunDal());
+        IKategoriManager _KategoriManager = new KategoriManager(UserHelper.Id, new EfKategoriDal());
 
         // GET: Urunlar
         public ActionResult Index()
@@ -30,6 +33,13 @@ namespace Sanlilar.WebUIAdmin.Controllers
             {
                 editDto = _UrunManager.Get(Convert.ToInt32(id));
             }
+
+            IEnumerable<KategoriListDto> kategoriler = _KategoriManager.Get(new Kategori());
+            List<SelectListItem> selectkategoriler = new SelectList(kategoriler, "Id", "Adi", editDto.KategoriId).ToList();
+
+            selectkategoriler.Insert(0, new SelectListItem() { Value = "", Text = "Seçiniz" });
+            ViewBag.KategoriId = selectkategoriler;
+
             return View(editDto);
         }
 
@@ -55,7 +65,8 @@ namespace Sanlilar.WebUIAdmin.Controllers
         // GET: Urunlar/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            _UrunManager.Delete(id);
+            return RedirectToAction("");
         }
     }
 }

@@ -12,4 +12,9 @@ namespace Sanlilar.Entity
         Termal_Eynal = 3,
         Termal_Iletisim = 4
     }
+
+    public enum EnuElementler
+    {
+        Urun = 1
+    }
 }

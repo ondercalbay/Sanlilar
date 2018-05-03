@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Sanlilar.Entity
 {
 
-    [Table("Kategoriler", Schema = "Mobilya")]
+    [Table("Kategoriler", Schema = "Eticaret")]
     public class Kategori : BaseEntity
     {
         [Required]

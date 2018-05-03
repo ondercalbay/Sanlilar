@@ -42,7 +42,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AltKategori.cs" />
     <Compile Include="BaseEntity.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="Kategori.cs" />
