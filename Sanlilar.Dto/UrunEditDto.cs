@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Web.Mvc;
 
 namespace Sanlilar.Dto
 {
@@ -15,9 +16,11 @@ namespace Sanlilar.Dto
         [Display(Name = "Kategori")]
         public int KategoriId { get; set; }
 
+        [DisplayFormat(DataFormatString = "{0:N}", ApplyFormatInEditMode = true)]
         public decimal Fiyat { get; set; }
 
         [Display(Name = "Açıklama")]
+        [AllowHtml]
         public string Aciklama { get; set; }
 
         public ResimEditDto Resim { get; set; }
