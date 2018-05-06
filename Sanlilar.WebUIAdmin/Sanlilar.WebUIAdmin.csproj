@@ -151,6 +151,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KategorilerController.cs" />
     <Compile Include="Controllers\KullanicilarController.cs" />
+    <Compile Include="Controllers\ResimlerController.cs" />
     <Compile Include="Controllers\SayfalarController.cs" />
     <Compile Include="Controllers\UrunlerController.cs" />
     <Compile Include="Global.asax.cs">
@@ -364,9 +365,12 @@
     <Content Include="Views\Kullanicilar\Login.cshtml" />
     <Content Include="Views\Urunler\Index.cshtml" />
     <Content Include="Views\Urunler\Edit.cshtml" />
+    <Content Include="Views\Resimler\Index.cshtml" />
+    <Content Include="Views\Resimler\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="images\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

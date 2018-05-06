@@ -6,7 +6,9 @@ using Sanlilar.IL;
 using Sanlilar.WebUIAdmin.Helpers;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Web;
 using System.Web.Mvc;
 
 namespace Sanlilar.WebUIAdmin.Controllers
@@ -15,6 +17,7 @@ namespace Sanlilar.WebUIAdmin.Controllers
     {
         IUrunManager _UrunManager = new UrunManager(UserHelper.Id, new EfUrunDal());
         IKategoriManager _KategoriManager = new KategoriManager(UserHelper.Id, new EfKategoriDal());
+        IResimManager _ResimManager = new ResimManager(UserHelper.Id, new EfResimDal());
 
         // GET: Urunlar
         public ActionResult Index()
@@ -32,6 +35,7 @@ namespace Sanlilar.WebUIAdmin.Controllers
             else
             {
                 editDto = _UrunManager.Get(Convert.ToInt32(id));
+                ViewBag.Resimler = _ResimManager.Get(new Resim { ElementTipi = EnuElementler.Urun, ElementId = Convert.ToInt32(id) });
             }
 
             IEnumerable<KategoriListDto> kategoriler = _KategoriManager.Get(new Kategori());
@@ -39,6 +43,7 @@ namespace Sanlilar.WebUIAdmin.Controllers
 
             selectkategoriler.Insert(0, new SelectListItem() { Value = "", Text = "Seçiniz" });
             ViewBag.KategoriId = selectkategoriler;
+
 
             return View(editDto);
         }
@@ -61,6 +66,47 @@ namespace Sanlilar.WebUIAdmin.Controllers
         }
 
 
+        public ActionResult FileUpload(HttpPostedFileBase file, int ElementId, EnuElementler ElementTipi)
+        {
+            if (file != null)
+            {
+                //string pic = Path.GetFileName(file.FileName);
+                string yer = String.Format("/images/{0}/{1}", DateTime.Now.Year, DateTime.Now.Month);
+                string path = Server.MapPath(yer);
+                // file is uploaded
+                if (!Directory.Exists(path))
+                {
+                    Directory.CreateDirectory(path);
+                }
+                string dosyaAdi = Guid.NewGuid().ToString() + Path.GetExtension(file.FileName);
+                path = Path.Combine(path, dosyaAdi);
+                file.SaveAs(path);
+
+                // save the image path path to the database or you can send image 
+                // directly to database
+                // in-case if you want to store byte[] ie. for DB
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    file.InputStream.CopyTo(ms);
+                    byte[] array = ms.GetBuffer();
+                }
+
+                ResimEditDto resim = new ResimEditDto();
+                resim.ElementId = ElementId;
+                resim.ElementTipi = ElementTipi;
+                resim.ResimYolu = yer + "/" + dosyaAdi;
+                _ResimManager.Add(resim);
+            }
+            // after successfully uploading redirect the user
+            return RedirectToAction("Edit", "Urunler", new { Id = ElementId });
+        }
+
+        public ActionResult FileDelete(int Id, int ElementId)
+        {
+            _ResimManager.Delete(Id);
+
+            return RedirectToAction("Edit", "Urunler", new { Id = ElementId });
+        }
 
         // GET: Urunlar/Delete/5
         public ActionResult Delete(int id)

@@ -17,7 +17,9 @@
         <th>
             @Html.DisplayNameFor(model => model.Fiyat)
         </th>
-        <th></th>
+        <th>Resim Ekle</th>
+        <th>Güncelle</th>
+        <th>Sil</th>
     </tr>
 
     @foreach (var item in Model)
@@ -30,7 +32,15 @@
                 @Html.DisplayFor(modelItem => item.Fiyat)
             </td>
             <td>
+                <a class="btn btn-xs btn-primary"
+                   href=@(String.Format("/Resimler/Edit/?ElementTipiId={0}&ElementId={1}",
+                    Convert.ToInt32(Sanlilar.Entity.EnuElementler.Urun),
+                    item.Id)) data-toggle="tooltip" title="Düzenle"><i class="glyphicon glyphicon-plus"></i></a>
+            </td>
+            <td>
                 <a class="btn btn-xs btn-primary" href=@("/Urunler/Edit/"+item.Id) data-toggle="tooltip" title="Düzenle"><i class="glyphicon glyphicon-pencil"></i></a>
+            </td>
+            <td>
                 <a class="btn btn-xs btn-danger" href=@("/Urunler/Delete/" + item.Id) data-toggle="tooltip" title="Sil"><i class="glyphicon glyphicon-trash"></i></a>
             </td>
         </tr>
