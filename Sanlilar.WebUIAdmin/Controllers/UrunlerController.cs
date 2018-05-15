@@ -114,5 +114,6 @@ namespace Sanlilar.WebUIAdmin.Controllers
             _UrunManager.Delete(id);
             return RedirectToAction("");
         }
+
     }
 }

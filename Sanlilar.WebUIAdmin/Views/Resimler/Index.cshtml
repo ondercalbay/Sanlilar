@@ -1,34 +1,51 @@
 ﻿@model IEnumerable<Sanlilar.Dto.ResimListDto>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Resimler";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>@ViewBag.Title</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.ResimYolu)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.ResimYolu)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-        </td>
-    </tr>
+@using (Html.BeginForm("FileUpload", "Urunler", FormMethod.Post,
+                            new { enctype = "multipart/form-data" }))
+{
+
+    @Html.AntiForgeryToken()
+
+    @*@Html.Hidden("ElementTipi", Sanlilar.Entity.EnuElementler.Urun)*@
+
+    <div class="form-horizontal">
+        <div class="form-group">
+            @Html.Label("Upload Image", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input type="file" name="file" id="file" class="form-control" />
+
+                <input type="submit" value="Yükle" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
 }
 
-</table>
+<div class="form-horizontal">
+
+    <div class="row">
+        @foreach (Sanlilar.Dto.ResimListDto item in Model)
+        {
+            <div class="col-md-4">
+                <div class="thumbnail">
+                    <a href=@item.ResimYolu>
+                        <img src=@item.ResimYolu alt="Lights" style="width:100%">
+
+                    </a>
+                    <div class="caption">
+                        <a class="btn btn-xs btn-primary"
+                           href=@("/Resimler/Delete/"+item.Id) data-toggle="tooltip" title="Sil"><i class="glyphicon glyphicon-minus"></i></a>
+
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

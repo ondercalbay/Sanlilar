@@ -17,10 +17,20 @@ namespace Sanlilar.WebUIAdmin.Controllers
         IKategoriManager _KategoriManager = new KategoriManager(UserHelper.Id, new EfKategoriDal());
 
         // GET: Resimlar
-        public ActionResult Index()
+        public ActionResult Index(int? ElementTipiId, int? ElementId)
         {
-            return View(_ResimManager.Get(new Resim()));
+            Resim filter = new Resim();
+            if (ElementTipiId != null)
+            {
+                filter.ElementTipi = (EnuElementler)ElementTipiId;
+            }
+            if (ElementId != null)
+            {
+                filter.ElementId = Convert.ToInt32(ElementId);
+            }
+            return View(_ResimManager.Get(filter));
         }
+
 
         public ActionResult Edit(int? id, int? ElementTipiId, int? ElementId)
         {

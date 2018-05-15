@@ -59,54 +59,6 @@
     </div>
 }
 
-@using (Html.BeginForm("FileUpload", "Urunler", FormMethod.Post,
-                            new { enctype = "multipart/form-data" }))
-{
-
-    @Html.AntiForgeryToken()
-
-    @Html.Hidden("ElementId", Model.Id)
-    @Html.Hidden("ElementTipi", Sanlilar.Entity.EnuElementler.Urun)
-
-    <div class="form-horizontal">
-        <div class="form-group">
-            @Html.Label("Upload Image", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <input type="file" name="file" id="file" class="form-control" />
-
-                <input type="submit" value="Yükle" class="btn btn-default" />
-            </div>
-        </div>
-    </div>
-}
-
-
-
-
-@if (ViewBag.Resimler != null)
-{
-    <div class="form-horizontal">
-
-        <div class="row">
-            @foreach (Sanlilar.Dto.ResimListDto item in ViewBag.Resimler)
-            {
-                <div class="col-md-4">
-                    <div class="thumbnail">
-                        <a href=@item.ResimYolu>
-                            <img src=@item.ResimYolu alt="Lights" style="width:100%">
-
-                        </a>
-                        <div class="caption">
-                            <a class="btn btn-xs btn-primary"
-                               href=@("/Urunler/FileDelete/"+item.Id+"?ElementId="+Model.Id) data-toggle="tooltip" title="Sil"><i class="glyphicon glyphicon-minus"></i></a>
-
-                        </div>
-                    </div>
-                </div>
-            }
-        </div>
-    </div>
-}
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

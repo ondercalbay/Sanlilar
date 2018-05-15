@@ -30,7 +30,7 @@ namespace Sanlilar.DL.EntityFramework
         {
             return _context.Resimler.Where(t =>
              (filter.Id == 0 || t.Id == filter.Id) &&
-             (filter.ElementTipi == null || t.ElementTipi == filter.ElementTipi) &&
+             (filter.ElementTipi == 0 || t.ElementTipi == filter.ElementTipi) &&
              (filter.ElementId == 0 || t.ElementId == filter.ElementId) &&
              t.Aktif == true).ToList();
         }
