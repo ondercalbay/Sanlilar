@@ -1,4 +1,5 @@
 ﻿using Sanlilar.BL;
+using Sanlilar.WebUIAdmin.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +20,11 @@ namespace Sanlilar.WebUIAdmin
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
             AutoMapperConfiguration.Initialize();
+
+            UserHelper.Id = 1;
+            UserHelper.Adi = "admin";
+            UserHelper.KullaniciAdi = "admin";
+            UserHelper.Soyadi = "admin";
 
         }
     }

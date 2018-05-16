@@ -2,6 +2,7 @@
 
 @{
     ViewBag.Title = "Ürün Resimleri";
+    ViewBag.Title = "Ürün Resimleri";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -39,7 +40,7 @@
 
                     </a>
                     <div class="caption">
-                        <a class="btn btn-xs btn-primary" href=@("/Urunler/FileDelete/"+item.Id+"?UrunId="+Model.Id) data-toggle="tooltip" title="Sil"><i class="glyphicon glyphicon-minus"></i></a>
+                        <a class="btn btn-xs btn-primary" href=@("/Urunler/FileDelete/"+item.Id+"?UrunId="+Model.Id) data-toggle="tooltip" title="Sil"><i class="glyphicon glyphicon-minus"></i>Sil</a>
 
                     </div>
                 </div>

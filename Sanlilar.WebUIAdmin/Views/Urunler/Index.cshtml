@@ -2,9 +2,9 @@
 
 @{
     ViewBag.Title = "Ürünler";
+    ViewBag.Breadcrumb = "<li class='breadcrumb-item active'>Ürünler</li>";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<h2>@ViewBag.Title</h2>
 
 <p>
     <a class="btn btn-primary" href=@("/Urunler/Edit/")><i class="glyphicon glyphicon-plus"></i> Yeni</a>
@@ -17,9 +17,7 @@
         <th>
             @Html.DisplayNameFor(model => model.Fiyat)
         </th>
-        <th>Resim Ekle</th>
-        <th>Güncelle</th>
-        <th>Sil</th>
+        <th>İşlem</th>
     </tr>
 
     @foreach (var item in Model)
@@ -32,14 +30,20 @@
                 @Html.DisplayFor(modelItem => item.Fiyat)
             </td>
             <td>
-                <a class="btn btn-xs btn-primary"
-                   href=@(String.Format("/Urunler/ResimEkle/{0}",item.Id)) data-toggle="tooltip" title="Düzenle"><i class="glyphicon glyphicon-plus"></i></a>
-            </td>
-            <td>
-                <a class="btn btn-xs btn-primary" href=@("/Urunler/Edit/"+item.Id) data-toggle="tooltip" title="Düzenle"><i class="glyphicon glyphicon-pencil"></i></a>
-            </td>
-            <td>
-                <a class="btn btn-xs btn-danger" href=@("/Urunler/Delete/" + item.Id) data-toggle="tooltip" title="Sil"><i class="glyphicon glyphicon-trash"></i></a>
+                <a class="btn btn-sm btn-outline-primary" href=@(String.Format("/Urunler/ResimEkle/{0}",item.Id)) data-toggle="tooltip" title="Düzenle">
+                    <i class="glyphicon glyphicon-plus"></i>
+                    Resim Ekle
+                </a>
+
+                <a class="btn btn-sm btn-outline-primary" href=@("/Urunler/Edit/"+item.Id) data-toggle="tooltip" title="Düzenle">
+                    <i class="glyphicon glyphicon-pencil"></i>
+                    Düzenle
+                </a>
+
+                <a class="btn btn-sm btn-outline-danger" href=@("/Urunler/Delete/" + item.Id) data-toggle="tooltip" title="Sil">
+                    <i class="glyphicon glyphicon-trash"></i>
+                    Sil
+                </a>
             </td>
         </tr>
     }

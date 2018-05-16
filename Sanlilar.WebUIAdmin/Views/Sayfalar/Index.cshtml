@@ -2,13 +2,14 @@
 
 @{
     ViewBag.Title = "Sayfalar";
+    ViewBag.Breadcrumb = "<li class='breadcrumb-item active'>Sayfalar</li>";
+
+
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Sayfalar</h2>
-
 <p>
-    @Html.ActionLink("Yeni", "Edit")
+    <a class="btn btn-primary" href=@("/Sayfalar/Edit/")><i class="glyphicon glyphicon-plus"></i> Yeni</a>
 </p>
 <table class="table">
     <tr>
@@ -21,18 +22,22 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.SayfaTipi)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Title)
-        </td>
-        <td>
-            @Html.ActionLink("Güncelle", "Edit", new {  id=item.Id  })           
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SayfaTipi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                <a class="btn btn-xs btn-primary" href=@("/Sayfalar/Edit/"+item.Id) data-toggle="tooltip" title="Düzenle">
+                    <i class="glyphicon glyphicon-pencil"></i>
+                    Düzenle
+                </a>                
+            </td>
+        </tr>
+    }
 
 </table>

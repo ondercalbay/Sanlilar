@@ -2,10 +2,9 @@
 
 @{
     ViewBag.Title = "Kategoriler";
+    ViewBag.Breadcrumb = "<li class='breadcrumb-item active'>Ürünler</li><li class='breadcrumb-item active'>Resim Ekle</li>";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h2>@ViewBag.Title</h2>
 
 <p>
     <a class="btn btn-primary" href=@("/Kategoriler/Edit/")><i class="glyphicon glyphicon-plus"></i> Yeni</a>
@@ -14,11 +13,8 @@
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Adi)
-        </th>
-        <th>
-            Alt Kategori Ekle
-        </th>
-        <th></th>
+        </th>       
+        <th>İşlem</th>
     </tr>
 
     @foreach (var item in Model)
@@ -29,11 +25,18 @@
             </td>
             <td>
                 @*@Html.ActionLink("Alt Kategori Ekle", "Edit", new { ustKategoriId = item.Id })*@
-                <a class="btn btn-xs btn-primary" href=@("/Kategoriler/Edit?ustKategoriId="+item.Id)><i class="glyphicon glyphicon-plus"></i> Alt Kategori Ekle</a>
-            </td>
-            <td>
-                <a class="btn btn-xs btn-primary" href=@("/Kategoriler/Edit/"+item.Id) data-toggle="tooltip" title="Düzenle"><i class="glyphicon glyphicon-pencil"></i></a>
-                <a class="btn btn-xs btn-danger" href=@("/Kategoriler/Delete/" + item.Id) data-toggle="tooltip" title="Sil"><i class="glyphicon glyphicon-trash"></i></a>
+                <a class="btn btn-sm btn-outline-primary" href=@("/Kategoriler/Edit?ustKategoriId="+item.Id)>
+                    <i class="glyphicon glyphicon-plus"></i> Alt Kategori Ekle
+                </a>
+            
+                <a class="btn btn-sm btn-outline-primary" href=@("/Kategoriler/Edit/"+item.Id) data-toggle="tooltip" title="Düzenle">
+                    <i class="glyphicon glyphicon-pencil"></i>
+                    Düzenle
+                </a>
+                <a class="btn btn-sm btn-outline-danger" href=@("/Kategoriler/Delete/" + item.Id) data-toggle="tooltip" title="Sil">
+                    <i class="glyphicon glyphicon-trash"></i>
+                    Sil
+                </a>
             </td>
         </tr>
     }
