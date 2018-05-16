@@ -33,9 +33,7 @@
             </td>
             <td>
                 <a class="btn btn-xs btn-primary"
-                   href=@(String.Format("/Resimler/Edit/?ElementTipiId={0}&ElementId={1}",
-                    Convert.ToInt32(Sanlilar.Entity.EnuElementler.Urun),
-                    item.Id)) data-toggle="tooltip" title="Düzenle"><i class="glyphicon glyphicon-plus"></i></a>
+                   href=@(String.Format("/Urunler/ResimEkle/{0}",item.Id)) data-toggle="tooltip" title="Düzenle"><i class="glyphicon glyphicon-plus"></i></a>
             </td>
             <td>
                 <a class="btn btn-xs btn-primary" href=@("/Urunler/Edit/"+item.Id) data-toggle="tooltip" title="Düzenle"><i class="glyphicon glyphicon-pencil"></i></a>

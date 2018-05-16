@@ -58,6 +58,7 @@
     <Compile Include="UrunDetailDto.cs" />
     <Compile Include="UrunEditDto.cs" />
     <Compile Include="UrunListDto.cs" />
+    <Compile Include="UrunResimEkleDto.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Sanlilar.Entity\Sanlilar.Entity.csproj">

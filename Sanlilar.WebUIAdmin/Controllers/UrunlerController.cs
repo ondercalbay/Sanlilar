@@ -65,8 +65,18 @@ namespace Sanlilar.WebUIAdmin.Controllers
 
         }
 
+        public ActionResult ResimEkle(int id)
+        {
+            Resim filter = new Resim();
+            filter.ElementTipi = EnuElementler.Urun;
+            filter.ElementId = id;
+            UrunResimEkleDto model = new UrunResimEkleDto();
+            model.Id = id;
+            model.Resimler = _ResimManager.Get(filter);
+            return View(model);
+        }
 
-        public ActionResult FileUpload(HttpPostedFileBase file, int ElementId, EnuElementler ElementTipi)
+        public ActionResult FileUpload(HttpPostedFileBase file, int id)
         {
             if (file != null)
             {
@@ -92,20 +102,20 @@ namespace Sanlilar.WebUIAdmin.Controllers
                 }
 
                 ResimEditDto resim = new ResimEditDto();
-                resim.ElementId = ElementId;
-                resim.ElementTipi = ElementTipi;
+                resim.ElementId = id;
+                resim.ElementTipi = EnuElementler.Urun;
                 resim.ResimYolu = yer + "/" + dosyaAdi;
                 _ResimManager.Add(resim);
             }
             // after successfully uploading redirect the user
-            return RedirectToAction("Edit", "Urunler", new { Id = ElementId });
+            return RedirectToAction("ResimEkle", "Urunler", new { Id = id });
         }
 
-        public ActionResult FileDelete(int Id, int ElementId)
+        public ActionResult FileDelete(int id,int UrunId)
         {
-            _ResimManager.Delete(Id);
+            _ResimManager.Delete(id);
 
-            return RedirectToAction("Edit", "Urunler", new { Id = ElementId });
+            return RedirectToAction("ResimEkle", "Urunler", new { Id = UrunId });
         }
 
         // GET: Urunlar/Delete/5
