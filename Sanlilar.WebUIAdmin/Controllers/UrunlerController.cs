@@ -65,7 +65,7 @@ namespace Sanlilar.WebUIAdmin.Controllers
 
         }
 
-        public ActionResult ResimEkle(int id)
+        public ActionResult Resimler(int id)
         {
             Resim filter = new Resim();
             filter.ElementTipi = EnuElementler.Urun;
@@ -108,14 +108,14 @@ namespace Sanlilar.WebUIAdmin.Controllers
                 _ResimManager.Add(resim);
             }
             // after successfully uploading redirect the user
-            return RedirectToAction("ResimEkle", "Urunler", new { Id = id });
+            return RedirectToAction("Resimler", "Urunler", new { Id = id });
         }
 
         public ActionResult FileDelete(int id,int UrunId)
         {
             _ResimManager.Delete(id);
 
-            return RedirectToAction("ResimEkle", "Urunler", new { Id = UrunId });
+            return RedirectToAction("Resimler", "Urunler", new { Id = UrunId });
         }
 
         // GET: Urunlar/Delete/5

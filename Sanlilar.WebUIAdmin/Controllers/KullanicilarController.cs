@@ -14,10 +14,9 @@ namespace Sanlilar.WebUIAdmin.Controllers
     {
         private readonly IKullaniciManager _servis = new KullaniciManager(UserHelper.Id, new EfKullaniciDal());
 
-        public KullanicilarController(IKullaniciManager kullaniciServis)
+        public KullanicilarController()
         {
-            _servis = kullaniciServis;
-
+            
         }
 
         public ActionResult Login()

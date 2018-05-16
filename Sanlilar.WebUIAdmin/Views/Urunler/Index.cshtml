@@ -7,7 +7,7 @@
 }
 
 <p>
-    <a class="btn btn-primary" href=@("/Urunler/Edit/")><i class="glyphicon glyphicon-plus"></i> Yeni</a>
+    <a class="btn btn-primary" href=@("/Urunler/Edit/")><i class="fas fa-plus"></i> Yeni</a>
 </p>
 <table class="table">
     <tr>
@@ -30,18 +30,18 @@
                 @Html.DisplayFor(modelItem => item.Fiyat)
             </td>
             <td>
-                <a class="btn btn-sm btn-outline-primary" href=@(String.Format("/Urunler/ResimEkle/{0}",item.Id)) data-toggle="tooltip" title="Düzenle">
-                    <i class="glyphicon glyphicon-plus"></i>
-                    Resim Ekle
+                <a class="btn btn-sm btn-outline-primary" href=@(String.Format("/Urunler/Resimler/{0}",item.Id)) data-toggle="tooltip" title="Düzenle">
+                    <i class="fas fa-camera"></i>
+                    Resimler
                 </a>
 
                 <a class="btn btn-sm btn-outline-primary" href=@("/Urunler/Edit/"+item.Id) data-toggle="tooltip" title="Düzenle">
-                    <i class="glyphicon glyphicon-pencil"></i>
+                    <i class="fas fa-pencil-alt"></i>
                     Düzenle
                 </a>
 
                 <a class="btn btn-sm btn-outline-danger" href=@("/Urunler/Delete/" + item.Id) data-toggle="tooltip" title="Sil">
-                    <i class="glyphicon glyphicon-trash"></i>
+                    <i class="fas fa-trash"></i>
                     Sil
                 </a>
             </td>

@@ -170,7 +170,6 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\font-awesome.min.css" />
-    <Content Include="Content\glyphicons.css" />
     <Content Include="Content\themes\base\accordion.css" />
     <Content Include="Content\themes\base\all.css" />
     <Content Include="Content\themes\base\autocomplete.css" />
@@ -212,6 +211,12 @@
     <Content Include="Content\themes\base\tabs.css" />
     <Content Include="Content\themes\base\theme.css" />
     <Content Include="Content\themes\base\tooltip.css" />
+    <Content Include="Content\themes\sb\js\sb-admin-charts.js" />
+    <Content Include="Content\themes\sb\js\sb-admin-charts.min.js" />
+    <Content Include="Content\themes\sb\js\sb-admin-datatables.js" />
+    <Content Include="Content\themes\sb\js\sb-admin-datatables.min.js" />
+    <Content Include="Content\themes\sb\js\sb-admin.js" />
+    <Content Include="Content\themes\sb\js\sb-admin.min.js" />
     <Content Include="Content\themes\sb\sb-admin.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
@@ -229,6 +234,13 @@
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\chart.js\Chart.bundle.js" />
+    <Content Include="Scripts\chart.js\Chart.bundle.min.js" />
+    <Content Include="Scripts\chart.js\Chart.js" />
+    <Content Include="Scripts\chart.js\Chart.min.js" />
+    <Content Include="Scripts\datatables\dataTables.bootstrap4.css" />
+    <Content Include="Scripts\datatables\dataTables.bootstrap4.js" />
+    <Content Include="Scripts\datatables\jquery.dataTables.js" />
     <Content Include="Scripts\esm\popper-utils.js" />
     <Content Include="Scripts\esm\popper-utils.min.js" />
     <Content Include="Scripts\esm\popper.js" />
@@ -352,6 +364,7 @@
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -360,6 +373,9 @@
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-easing\jquery.easing.compatibility.js" />
+    <Content Include="Scripts\jquery-easing\jquery.easing.js" />
+    <Content Include="Scripts\jquery-easing\jquery.easing.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -405,7 +421,9 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
-    <Content Include="Views\Urunler\ResimEkle.cshtml" />
+    <Content Include="Views\Urunler\Resimler.cshtml" />
+    <Content Include="Views\Kullanicilar\Edit.cshtml" />
+    <Content Include="Views\Kullanicilar\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
