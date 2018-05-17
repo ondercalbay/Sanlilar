@@ -1,4 +1,5 @@
 ﻿using Sanlilar.Dto;
+using Sanlilar.WebUIAdmin.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,6 +8,7 @@ using System.Web.Mvc;
 
 namespace Sanlilar.WebUIAdmin.Controllers
 {
+    [AuthorizeUserAccessLevel(UserRole = "admin sistem")]
     public class HomeController : Controller
     {
         public ActionResult Index()
@@ -27,5 +29,7 @@ namespace Sanlilar.WebUIAdmin.Controllers
 
             return View();
         }
+
+
     }
 }

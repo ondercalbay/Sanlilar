@@ -9,14 +9,14 @@ using System.Web.Mvc;
 using System.Web.Security;
 
 namespace Sanlilar.WebUIAdmin.Controllers
-{
+{    
     public class KullanicilarController : Controller
     {
-        private readonly IKullaniciManager _servis = new KullaniciManager(UserHelper.Id, new EfKullaniciDal());
+        private readonly IKullaniciManager _servis = new KullaniciManager(UserHelper.Kullanici, new EfKullaniciDal());
 
         public KullanicilarController()
         {
-            
+
         }
 
         public ActionResult Login()
@@ -29,28 +29,29 @@ namespace Sanlilar.WebUIAdmin.Controllers
         {
             if (ModelState.IsValid)
             {
-                KullaniciEditDto kullaniciAuth = _servis.Authenticate(kullanici);
+                KullaniciSessionDto kullaniciAuth = _servis.Authenticate(kullanici);
                 if (kullaniciAuth == null)
                 {
                     ModelState.AddModelError("Hata", "Kullanıcı adı veya şifresi hatalı.");
                 }
                 else
                 {
-                    FormsAuthentication.SetAuthCookie(kullaniciAuth.KullaniciAdi, false);
+                    UserHelper.AddCookies(kullaniciAuth, false);
+                    
                     return Redirect(returnUrl ?? "/");
                 }
             }
             return View();
         }
 
-        public ActionResult SignOut()
+        public ActionResult Cikis()
         {
             FormsAuthentication.SignOut();
             return Redirect("/");
         }
 
-        // GET: Kullanici
-        [Authorize]
+        [AuthorizeUserAccessLevel(UserRole = "admin sistem")]
+        // GET: Kullanici        
         public ActionResult Index()
         {
             ViewBag.Message = "Kullanicilar";
@@ -73,7 +74,8 @@ namespace Sanlilar.WebUIAdmin.Controllers
 
         //    return View(kullaniciDto);
         //}
-        [Authorize]
+
+        [AuthorizeUserAccessLevel(UserRole = "admin sistem")]
         public ActionResult Edit(int? id)
         {
             KullaniciEditDto kullaniciDto = new KullaniciEditDto();
@@ -97,7 +99,7 @@ namespace Sanlilar.WebUIAdmin.Controllers
         //    return View(manager.Get(id));
         //}
 
-        [Authorize]
+        [AuthorizeUserAccessLevel(UserRole = "admin sistem")]
         [HttpPost]
         public ActionResult Edit(KullaniciEditDto kullanici)
         {
@@ -114,7 +116,7 @@ namespace Sanlilar.WebUIAdmin.Controllers
 
         }
 
-        [Authorize]
+        [AuthorizeUserAccessLevel(UserRole = "admin sistem")]
         [HttpGet]
         public ActionResult Delete(int id)
         {

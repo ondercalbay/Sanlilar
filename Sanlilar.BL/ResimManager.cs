@@ -11,18 +11,18 @@ namespace Sanlilar.BL
     public class ResimManager : IResimManager
     {
         private IResimDal _dal { get; set; }
-        public int _userId { get; set; }
-        public ResimManager(int userId, IResimDal dal)
+        public KullaniciSessionDto _user { get; set; }
+        public ResimManager(KullaniciSessionDto user, IResimDal dal)
         {
-            _userId = userId;
+            _user = user;
             _dal = dal;
         }
         public ResimEditDto Add(ResimEditDto editDto)
         {
             Resim ent = Mapper.Map<Resim>(editDto);
-            ent.EkleyenId = _userId;
+            ent.EkleyenId = _user.Id;
             ent.EklemeZamani = DateTime.Now;
-            ent.GuncelleyenId = _userId;
+            ent.GuncelleyenId = _user.Id;
             ent.GuncellemeZamani = DateTime.Now;
             ent.Aktif = true;
             return Mapper.Map<ResimEditDto>(_dal.Add(ent));
@@ -30,7 +30,7 @@ namespace Sanlilar.BL
 
         public void Delete(int id)
         {
-            _dal.Delete(id, _userId);
+            _dal.Delete(id, _user.Id);
         }
 
         public List<ResimListDto> Get(Resim filter)
@@ -46,7 +46,7 @@ namespace Sanlilar.BL
         public ResimEditDto Update(ResimEditDto editDto)
         {
             Resim ent = Mapper.Map<Resim>(editDto);
-            ent.GuncelleyenId = _userId;
+            ent.GuncelleyenId = _user.Id;
             ent.GuncellemeZamani = DateTime.Now;
           
             return Mapper.Map<ResimEditDto>(_dal.Update(ent));

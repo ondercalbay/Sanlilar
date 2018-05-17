@@ -9,6 +9,8 @@ namespace Sanlilar.Dto
 {
     public class KullaniciLoginDto
     {
+        public int Id { get; set; }
+
         [Required]
         [MaxLength(50)]
         [Display(Name = "Kullanıcı Adı")]

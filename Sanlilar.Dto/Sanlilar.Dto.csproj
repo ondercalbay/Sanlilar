@@ -49,6 +49,7 @@
     <Compile Include="KullaniciEditDto.cs" />
     <Compile Include="KullaniciListDto.cs" />
     <Compile Include="KullaniciLoginDto.cs" />
+    <Compile Include="KullaniciSessionDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResimEditDto.cs" />
     <Compile Include="ResimListDto.cs" />

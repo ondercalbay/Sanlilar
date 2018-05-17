@@ -21,10 +21,10 @@ namespace Sanlilar.WebUIAdmin
 
             AutoMapperConfiguration.Initialize();
 
-            UserHelper.Id = 1;
-            UserHelper.Adi = "admin";
-            UserHelper.KullaniciAdi = "admin";
-            UserHelper.Soyadi = "admin";
+            //UserHelper.Id = 1;
+            //UserHelper.Adi = "admin";
+            //UserHelper.KullaniciAdi = "admin";
+            //UserHelper.Soyadi = "admin";
 
         }
     }

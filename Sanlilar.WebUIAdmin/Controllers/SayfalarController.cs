@@ -9,9 +9,10 @@ using System.Web.Mvc;
 
 namespace Sanlilar.WebUIAdmin.Controllers
 {
+    [AuthorizeUserAccessLevel(UserRole = "admin sistem")]
     public class SayfalarController : Controller
     {
-        ISayfaManager _sayfaManager = new SayfaManager(UserHelper.Id,new EfSayfaDal());
+        ISayfaManager _sayfaManager = new SayfaManager(UserHelper.Kullanici, new EfSayfaDal());
 
         // GET: Sayfalar
         public ActionResult Index()

@@ -11,10 +11,11 @@ using System.Web.Mvc;
 
 namespace Sanlilar.WebUIAdmin.Controllers
 {
+    [AuthorizeUserAccessLevel(UserRole = "admin sistem")]
     public class ResimlerController : Controller
     {
-        IResimManager _ResimManager = new ResimManager(UserHelper.Id, new EfResimDal());
-        IKategoriManager _KategoriManager = new KategoriManager(UserHelper.Id, new EfKategoriDal());
+        IResimManager _ResimManager = new ResimManager(UserHelper.Kullanici, new EfResimDal());
+        IKategoriManager _KategoriManager = new KategoriManager(UserHelper.Kullanici, new EfKategoriDal());
 
         // GET: Resimlar
         public ActionResult Index(int? ElementTipiId, int? ElementId)

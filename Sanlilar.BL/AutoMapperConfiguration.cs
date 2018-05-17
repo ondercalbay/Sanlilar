@@ -32,8 +32,13 @@ namespace Sanlilar.BL
 
             Mapper.Initialize(cfg =>
             {
-                //cfg.CreateMap<List<Kullanici>, List<KullaniciListDto>>();
-                //cfg.CreateMap<List<KullaniciListDto>, List<Kullanici>>();
+                cfg.CreateMap<List<Kullanici>, List<KullaniciListDto>>();
+                cfg.CreateMap<List<KullaniciListDto>, List<Kullanici>>();
+                cfg.CreateMap<List<Kullanici>, List<KullaniciLoginDto>>();
+                cfg.CreateMap<KullaniciLoginDto, Kullanici>();
+                cfg.CreateMap<Kullanici, KullaniciSessionDto>();
+                cfg.CreateMap<KullaniciSessionDto, Kullanici>();
+
 
                 cfg.CreateMap<Sayfa, SayfaListDto>();
                 cfg.CreateMap<SayfaListDto, Sayfa>();

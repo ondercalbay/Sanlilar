@@ -12,10 +12,10 @@ namespace Sanlilar.BL
     public class KullaniciManager : IKullaniciManager
     {
         private IKullaniciDal _dal { get; set; }
-        public int _userId { get; set; }
-        public KullaniciManager(int userId, IKullaniciDal dal)
+        public KullaniciSessionDto _user { get; set; }
+        public KullaniciManager(KullaniciSessionDto user, IKullaniciDal dal)
         {
-            _userId = userId;
+            _user = user;
             _dal = dal;
         }
 
@@ -32,9 +32,9 @@ namespace Sanlilar.BL
             }
 
             Kullanici ent = Mapper.Map<Kullanici>(editDto);
-            ent.EkleyenId = _userId;
+            ent.EkleyenId = _user.Id;
             ent.EklemeZamani = DateTime.Now;
-            ent.GuncelleyenId = _userId;
+            ent.GuncelleyenId = _user.Id;
             ent.GuncellemeZamani = DateTime.Now;
             ent.Aktif = true;
             return Mapper.Map<KullaniciEditDto>(_dal.Add(ent));
@@ -42,7 +42,7 @@ namespace Sanlilar.BL
 
         public void Delete(int id)
         {
-            _dal.Delete(id,_userId);
+            _dal.Delete(id, _user.Id);
         }
 
         public List<KullaniciListDto> Get(Kullanici filter)
@@ -67,24 +67,27 @@ namespace Sanlilar.BL
                 throw new Exception($"{editDto.KullaniciAdi} daha önce kullanılmış. Lütfen başka bir Kullanıcı Adı giriniz.");
             }
 
-            Kullanici ent = Mapper.Map<Kullanici>(editDto);          
+            Kullanici ent = Mapper.Map<Kullanici>(editDto);
             ent.GuncelleyenId = 1;
             ent.GuncellemeZamani = DateTime.Now;
             return Mapper.Map<KullaniciEditDto>(_dal.Update(ent));
         }
 
-        public KullaniciEditDto Authenticate(KullaniciLoginDto kullaniciLoginDto)
+        public KullaniciSessionDto Authenticate(KullaniciLoginDto kullaniciLoginDto)
         {
             Kullanici ent = Mapper.Map<Kullanici>(kullaniciLoginDto);
-            List<Kullanici> kul = _dal.Get(ent);
-            if (kul.Count == 0)
+            Kullanici kul = _dal.Get(ent).FirstOrDefault();
+            if (kul == null)
             {
                 return null;
             }
             else
             {
-                return Mapper.Map<KullaniciEditDto>(kul[0]);
+                KullaniciSessionDto result = Mapper.Map<KullaniciSessionDto>(kul);
+                result.RolAdi = "admin";
+                return Mapper.Map<KullaniciSessionDto>(result);
             }
+
 
         }
 

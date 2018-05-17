@@ -11,9 +11,10 @@ using System.Web.Mvc;
 
 namespace Sanlilar.WebUIAdmin.Controllers
 {
+    [AuthorizeUserAccessLevel(UserRole = "admin sistem")]
     public class KategorilerController : Controller
     {
-        IKategoriManager _manager = new KategoriManager(UserHelper.Id, new EfKategoriDal());
+        IKategoriManager _manager = new KategoriManager(UserHelper.Kullanici, new EfKategoriDal());
         // GET: Kategoriler
         public ActionResult Index()
         {
