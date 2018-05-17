@@ -15,7 +15,10 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>SB Admin - Start Bootstrap Template</title>
-    @Styles.Render("~/Content/css")
+
+    <link href="/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="/Content/font-awesome.min.css" rel="stylesheet" />
+    <link href="/Content/themes/sb/sb-admin.css" rel="stylesheet" />
 </head>
 <body class="bg-dark">
     <div class="container">
@@ -35,13 +38,15 @@
                         <input class="form-control" id="Sifre" name="Sifre" type="password" placeholder="Şifre">
                     </div>
                     @*<div class="form-group">
-                        <div class="form-check">
-                            <label class="form-check-label">
-                                <input class="form-check-input" type="checkbox"> Remember Password
-                            </label>
-                        </div>
-                    </div>*@
-                    <button type="submit" class="btn btn-primary btn-block">Giriş<i class="fa fa-sign-in"></i></button>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox"> Remember Password
+                                </label>
+                            </div>
+                        </div>*@
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block">Giriş<i class="fa fa-sign-in"></i></button>
+                    </div>
                 }
                 @*<div class="text-center">
                         <a class="d-block small mt-3" href="register.html">Register an Account</a>
@@ -56,11 +61,7 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <link href="/Content/font-awesome.min.css" rel="stylesheet" type="text/css" />
-    <link href="http://fonts.googleapis.com/css?family=Roboto:400" rel="stylesheet" type="text/css" />
+    <script src="/Scripts/bootstrap.bundle.min.js"></script>
+    <script src="/Scripts/jquery-easing/jquery.easing.min.js"></script>    
 </body>
 </html>
