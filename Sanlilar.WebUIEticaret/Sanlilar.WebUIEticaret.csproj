@@ -2658,6 +2658,7 @@
     <Content Include="include\rs-plugin\fonts\revicons\revicons.eot" />
     <Content Include="include\rs-plugin\fonts\revicons\revicons.ttf" />
     <Content Include="include\rs-plugin\fonts\revicons\revicons.woff" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\events-data.js" />
     <Content Include="Scripts\functions.js" />
