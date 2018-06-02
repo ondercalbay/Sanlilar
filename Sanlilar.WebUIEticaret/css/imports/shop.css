@@ -41,7 +41,7 @@
 	height: 100%;
 }
 
-body:not(.device-touch):not(.device-xs):not(.device-xxs) .product-image > a {
+body:not(.device-touch):not(.device-sm):not(.device-xs) .product-image > a {
 	-webkit-transition: all .5s ease;
 	-o-transition: all .5s ease;
 	transition: all .5s ease;
@@ -80,7 +80,7 @@ body:not(.device-touch):not(.device-xs):not(.device-xxs) .product-image > a {
 
 .product-price {
 	font-size: 18px;
-	font-weight: 600;
+	font-weight: 700;
 	color: #444;
 	margin-bottom: 4px;
 }
@@ -107,7 +107,7 @@ body:not(.device-touch):not(.device-xs):not(.device-xxs) .product-image > a {
 	z-index: 6;
 }
 
-body:not(.device-touch):not(.device-xs):not(.device-xxs) .product-overlay {
+body:not(.device-touch):not(.device-sm):not(.device-xs) .product-overlay {
 	-webkit-transition: bottom .3s ease-in-out;
 	-o-transition: bottom .3s ease-in-out;
 	transition: bottom .3s ease-in-out;
@@ -126,7 +126,7 @@ body:not(.device-touch):not(.device-xs):not(.device-xxs) .product-overlay {
 	border-right: 1px solid rgba(0,0,0,0.1);
 }
 
-body:not(.device-touch):not(.device-xs):not(.device-xxs) .product-overlay a {
+body:not(.device-touch):not(.device-sm):not(.device-xs) .product-overlay a {
 	-webkit-transition: all .3s ease-in-out;
 	-o-transition: all .3s ease-in-out;
 	transition: all .3s ease-in-out;

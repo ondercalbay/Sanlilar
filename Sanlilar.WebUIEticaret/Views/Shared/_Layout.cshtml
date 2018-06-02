@@ -1,13 +1,12 @@
-﻿
-<!DOCTYPE html>
-<html dir="ltr" lang="en-US">
+﻿<html dir="ltr" lang="en-US">
 <head>
+
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="author" content="SemiColonWeb" />
 
     <!-- Stylesheets
     ============================================= -->
-    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Raleway:300,400,500,600,700|Crete+Round:400i" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="/css/bootstrap.css" type="text/css" />
     <link rel="stylesheet" href="/css/style.css" type="text/css" />
     <link rel="stylesheet" href="/css/dark.css" type="text/css" />
@@ -21,14 +20,14 @@
         <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
     <![endif]-->
     <!-- SLIDER REVOLUTION 5.x CSS SETTINGS -->
-    <link rel="stylesheet" type="text/css" href="include/rs-plugin/css/settings.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="include/rs-plugin/css/layers.css">
-    <link rel="stylesheet" type="text/css" href="include/rs-plugin/css/navigation.css">
+    <link rel="stylesheet" type="text/css" href="/include/rs-plugin/css/settings.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/include/rs-plugin/css/layers.css">
+    <link rel="stylesheet" type="text/css" href="/include/rs-plugin/css/navigation.css">
 
     <!-- Document Title
     ============================================= -->
-
     <title>@ViewBag.Title</title>
+
     <style>
 
         .revo-slider-emphasis-text {
@@ -74,8 +73,8 @@
     <div id="wrapper" class="clearfix">
 
         <!-- Top Bar
-        ============================================= -->
-        <div id="top-bar" class="hidden-xs">
+    ============================================= -->
+        <div id="top-bar" class="d-none d-md-block">
 
             <div class="container clearfix">
 
@@ -88,7 +87,7 @@
                 <div class="col_half col_last fright nobottommargin">
 
                     <!-- Top Links
-                    ============================================= -->
+                ============================================= -->
                     <div class="top-links">
                         <ul>
                             <li>
@@ -112,11 +111,15 @@
                                 <div class="top-link-section">
                                     <form id="top-login" role="form">
                                         <div class="input-group" id="top-login-username">
-                                            <span class="input-group-addon"><i class="icon-user"></i></span>
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text"><i class="icon-user"></i></div>
+                                            </div>
                                             <input type="email" class="form-control" placeholder="Email address" required="">
                                         </div>
                                         <div class="input-group" id="top-login-password">
-                                            <span class="input-group-addon"><i class="icon-key"></i></span>
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text"><i class="icon-key"></i></div>
+                                            </div>
                                             <input type="password" class="form-control" placeholder="Password" required="">
                                         </div>
                                         <label class="checkbox">
@@ -135,7 +138,7 @@
 
         </div><!-- #top-bar end -->
         <!-- Header
-        ============================================= -->
+    ============================================= -->
         <header id="header">
 
             <div id="header-wrap">
@@ -145,13 +148,13 @@
                     <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
 
                     <!-- Logo
-                    ============================================= -->
+                ============================================= -->
                     <div id="logo">
                         <a href="index.html" class="standard-logo" data-dark-logo="images/logo-dark.png"><img src="images/logo.png" alt="Canvas Logo"></a>
                         <a href="index.html" class="retina-logo" data-dark-logo="images/logo-dark@2x.png"><img src="images/logo@2x.png" alt="Canvas Logo"></a>
                     </div><!-- #logo end -->
                     <!-- Primary Navigation
-                    ============================================= -->
+                ============================================= -->
                     <nav id="primary-menu">
 
                         <ul>
@@ -230,15 +233,14 @@
                                     <li><a href="index-events.html"><div>Home - Events</div></a></li>
                                     <li><a href="index-parallax.html"><div>Home - Parallax</div></a></li>
                                     <li><a href="index-app-showcase.html"><div>Home - App Showcase</div></a></li>
-                                    <li><a href="index-boxed.html"><div>Home - Boxed Layout</div></a></li>
                                 </ul>
                             </li>
                             <!-- Mega Menu
-                            ============================================= -->
+                        ============================================= -->
                             <li class="mega-menu">
                                 <a href="#"><div>Men</div><span>Out of the Box</span></a>
                                 <div class="mega-menu-content style-2 clearfix">
-                                    <ul class="mega-menu-column col-md-3">
+                                    <ul class="mega-menu-column col-lg-3">
                                         <li class="mega-menu-title">
                                             <a href="#"><div>Footwear</div></a>
                                             <ul>
@@ -252,7 +254,7 @@
                                             </ul>
                                         </li>
                                     </ul>
-                                    <ul class="mega-menu-column col-md-3">
+                                    <ul class="mega-menu-column col-lg-3">
                                         <li class="mega-menu-title">
                                             <a href="#"><div>Clothing</div></a>
                                             <ul>
@@ -266,7 +268,7 @@
                                             </ul>
                                         </li>
                                     </ul>
-                                    <ul class="mega-menu-column col-md-3">
+                                    <ul class="mega-menu-column col-lg-3">
                                         <li class="mega-menu-title">
                                             <a href="#"><div>Accessories</div></a>
                                             <ul>
@@ -280,7 +282,7 @@
                                             </ul>
                                         </li>
                                     </ul>
-                                    <ul class="mega-menu-column col-md-3">
+                                    <ul class="mega-menu-column col-lg-3">
                                         <li class="mega-menu-title">
                                             <a href="#"><div>New Arrivals</div></a>
                                             <ul>
@@ -299,7 +301,7 @@
                             <li>
                                 <a href="#"><div>Women</div><span>Out of the Box</span></a>
                                 <div class="mega-menu-content style-2 clearfix">
-                                    <ul class="mega-menu-column col-md-6">
+                                    <ul class="mega-menu-column col-lg-6">
                                         <li class="mega-menu-title">
                                             <a href="#"><div>Footwear</div></a>
                                             <ul>
@@ -313,7 +315,7 @@
                                             </ul>
                                         </li>
                                     </ul>
-                                    <ul class="mega-menu-column col-md-6">
+                                    <ul class="mega-menu-column col-lg-6">
                                         <li class="mega-menu-title">
                                             <a href="#"><div>Clothing</div></a>
                                             <ul>
@@ -337,7 +339,7 @@
                         </ul>
 
                         <!-- Top Cart
-                        ============================================= -->
+                    ============================================= -->
                         <div id="top-cart">
                             <a href="#" id="top-cart-trigger"><i class="icon-shopping-cart"></i><span>5</span></a>
                             <div class="top-cart-content">
@@ -373,7 +375,7 @@
                             </div>
                         </div><!-- #top-cart end -->
                         <!-- Top Search
-                        ============================================= -->
+                    ============================================= -->
                         <div id="top-search">
                             <a href="#" id="top-search-trigger"><i class="icon-search3"></i><i class="icon-line-cross"></i></a>
                             <form action="search.html" method="get">
@@ -389,23 +391,17 @@
 
         </header><!-- #header end -->
 
-
+        @RenderBody()
 
        
-
-        <!-- Content
-        ============================================= -->
-        @RenderBody()
-      
-        <!-- #content end -->
         <!-- Footer
-        ============================================= -->
+    ============================================= -->
         <footer id="footer" class="dark">
 
             <div class="container">
 
                 <!-- Footer Widgets
-                ============================================= -->
+            ============================================= -->
                 <div class="footer-widgets-wrap clearfix">
 
                     <div class="col_two_third">
@@ -504,12 +500,12 @@
 
                             <div class="row">
 
-                                <div class="col-md-6 bottommargin-sm">
+                                <div class="col-lg-6 bottommargin-sm">
                                     <div class="counter counter-small"><span data-from="50" data-to="15065421" data-refresh-interval="80" data-speed="3000" data-comma="true"></span></div>
                                     <h5 class="nobottommargin">Total Downloads</h5>
                                 </div>
 
-                                <div class="col-md-6 bottommargin-sm">
+                                <div class="col-lg-6 bottommargin-sm">
                                     <div class="counter counter-small"><span data-from="100" data-to="18465" data-refresh-interval="50" data-speed="2000" data-comma="true"></span></div>
                                     <h5 class="nobottommargin">Clients</h5>
                                 </div>
@@ -523,11 +519,13 @@
                             <div class="widget-subscribe-form-result"></div>
                             <form id="widget-subscribe-form" action="include/subscribe.php" role="form" method="post" class="nobottommargin">
                                 <div class="input-group divcenter">
-                                    <span class="input-group-addon"><i class="icon-email2"></i></span>
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text"><i class="icon-email2"></i></div>
+                                    </div>
                                     <input type="email" id="widget-subscribe-form-email" name="widget-subscribe-form-email" class="form-control required email" placeholder="Enter your Email">
-                                    <span class="input-group-btn">
+                                    <div class="input-group-append">
                                         <button class="btn btn-success" type="submit">Subscribe</button>
-                                    </span>
+                                    </div>
                                 </div>
                             </form>
                         </div>
@@ -536,14 +534,14 @@
 
                             <div class="row">
 
-                                <div class="col-md-6 clearfix bottommargin-sm">
+                                <div class="col-lg-6 clearfix bottommargin-sm">
                                     <a href="#" class="social-icon si-dark si-colored si-facebook nobottommargin" style="margin-right: 10px;">
                                         <i class="icon-facebook"></i>
                                         <i class="icon-facebook"></i>
                                     </a>
                                     <a href="#"><small style="display: block; margin-top: 3px;"><strong>Like us</strong><br>on Facebook</small></a>
                                 </div>
-                                <div class="col-md-6 clearfix">
+                                <div class="col-lg-6 clearfix">
                                     <a href="#" class="social-icon si-dark si-colored si-rss nobottommargin" style="margin-right: 10px;">
                                         <i class="icon-rss"></i>
                                         <i class="icon-rss"></i>
@@ -562,7 +560,7 @@
             </div>
 
             <!-- Copyrights
-            ============================================= -->
+        ============================================= -->
             <div id="copyrights">
 
                 <div class="container clearfix">
@@ -633,34 +631,34 @@
 
     <!-- External JavaScripts
     ============================================= -->
-    <script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" src="js/plugins.js"></script>
+    <script src="/js/jquery.js"></script>
+    <script src="/js/plugins.js"></script>
 
     <!-- Footer Scripts
     ============================================= -->
-    <script type="text/javascript" src="js/functions.js"></script>
+    <script src="/js/functions.js"></script>
 
     <!-- SLIDER REVOLUTION 5.x SCRIPTS  -->
-    <script type="text/javascript" src="include/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
-    <script type="text/javascript" src="include/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+    <script src="/include/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+    <script src="/include/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
 
-    <script type="text/javascript" src="include/rs-plugin/js/extensions/revolution.extension.video.min.js"></script>
-    <script type="text/javascript" src="include/rs-plugin/js/extensions/revolution.extension.slideanims.min.js"></script>
-    <script type="text/javascript" src="include/rs-plugin/js/extensions/revolution.extension.actions.min.js"></script>
-    <script type="text/javascript" src="include/rs-plugin/js/extensions/revolution.extension.layeranimation.min.js"></script>
-    <script type="text/javascript" src="include/rs-plugin/js/extensions/revolution.extension.kenburn.min.js"></script>
-    <script type="text/javascript" src="include/rs-plugin/js/extensions/revolution.extension.navigation.min.js"></script>
-    <script type="text/javascript" src="include/rs-plugin/js/extensions/revolution.extension.migration.min.js"></script>
-    <script type="text/javascript" src="include/rs-plugin/js/extensions/revolution.extension.parallax.min.js"></script>
+    <script src="/include/rs-plugin/js/extensions/revolution.extension.video.min.js"></script>
+    <script src="/include/rs-plugin/js/extensions/revolution.extension.slideanims.min.js"></script>
+    <script src="/include/rs-plugin/js/extensions/revolution.extension.actions.min.js"></script>
+    <script src="/include/rs-plugin/js/extensions/revolution.extension.layeranimation.min.js"></script>
+    <script src="/include/rs-plugin/js/extensions/revolution.extension.kenburn.min.js"></script>
+    <script src="/include/rs-plugin/js/extensions/revolution.extension.navigation.min.js"></script>
+    <script src="/include/rs-plugin/js/extensions/revolution.extension.migration.min.js"></script>
+    <script src="/include/rs-plugin/js/extensions/revolution.extension.parallax.min.js"></script>
 
-    <script type="text/javascript">
+    <script>
 
 		var tpj=jQuery;
 		tpj.noConflict();
 
 		tpj(document).ready(function() {
 
-			var apiRevoSlider = tpj('.tp-banner').show().revolution(
+			var apiRevoSlider = tpj('#rev_slider_ishop').show().revolution(
 			{
 				sliderType:"standard",
 				jsFileLocation:"include/rs-plugin/js/",

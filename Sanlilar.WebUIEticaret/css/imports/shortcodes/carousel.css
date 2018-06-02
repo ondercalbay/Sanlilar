@@ -97,9 +97,10 @@
 
 .owl-carousel .owl-nav.disabled, .owl-carousel .owl-dots.disabled { display: none; }
 
-.owl-carousel .owl-nav .owl-prev,
-.owl-carousel .owl-nav .owl-next,
-.owl-carousel .owl-dot {
+.owl-nav .owl-prev,
+.owl-nav .owl-next,
+.owl-dot,
+.owl-dots button {
 	cursor: pointer;
 	cursor: hand;
 	-webkit-user-select: none;
@@ -241,6 +242,7 @@
 
 .owl-carousel.with-carousel-dots .owl-nav [class*=owl-] { margin-top: -38px; }
 
+.slider-element .owl-nav [class*=owl-],
 .owl-carousel-full .owl-nav [class*=owl-] {
 	margin-top: -30px;
 	left: 0 !important;
@@ -260,6 +262,7 @@
 	right: -36px;
 }
 
+.slider-element .owl-nav .owl-next,
 .owl-carousel-full  .owl-nav .owl-next {
 	left: auto !important;
 	right: 0 !important;
@@ -295,7 +298,7 @@
 	*display: inline;
 }
 
-.owl-carousel .owl-dots .owl-dot span {
+.owl-carousel .owl-dots .owl-dot {
 	display: block;
 	width: 8px;
 	height: 8px;

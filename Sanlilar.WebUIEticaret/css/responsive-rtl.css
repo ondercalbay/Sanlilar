@@ -212,13 +212,7 @@
 
 
 @media (min-width: 768px) and (max-width: 991px) {
-
-	.sidebar-widgets-wrap { margin: 0 0 -40px -38px; }
-
-	.sidebar-widgets-wrap .widget { margin: 0 0 40px 37px; }
-
 	.landing-video { margin: 14px 60px 0 0; }
-
 }
 
 
@@ -267,7 +261,7 @@
 	/* Blog
 	-----------------------------------------------------------------*/
 
-	.entry-meta li { margin: 0 10px 10px 0; }
+	.entry-meta li { margin: 0 0 10px 10px; }
 
 	.post-grid { margin-left: 0 !important; }
 
@@ -298,7 +292,7 @@
 
 }
 
-@media (min-width: 480px) and (max-width: 767px) {
+@media (min-width: 576px) and (max-width: 767px) {
 
 	#top-search form input {
 		padding-left: 60px;
@@ -340,25 +334,30 @@
 
 }
 
-@media (max-width: 479px) {
+@media (max-width: 575px) {
+
+	#primary-menu-trigger {
+		left: 0;
+		right: 20px;
+	}
 
 	#top-search a {
 		right: auto;
-		left: 15px;
+		left: 40px;
 	}
 
 	#top-search form input {
-		padding-left: 30px;
+		padding-left: 55px;
 		padding-right: 0;
 	}
 
 	#side-panel-trigger {
-		left: 43px;
+		left: 68px;
 		right: auto;
 	}
 
 	#top-account {
-		left: 43px;
+		left: 68px;
 		right: auto;
 	}
 

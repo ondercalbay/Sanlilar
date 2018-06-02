@@ -107,12 +107,12 @@
 /* Countdown - Coming Soon
 -----------------------------------------------------------------*/
 
-body:not(.device-xs):not(.device-xxs) .countdown.countdown-large.coming-soon .countdown-section {
+body:not(.device-sm):not(.device-xs) .countdown.countdown-large.coming-soon .countdown-section {
 	border: none;
 	padding: 15px;
 }
 
-body:not(.device-xs):not(.device-xxs) .countdown.countdown-large.coming-soon .countdown-amount {
+body:not(.device-sm):not(.device-xs) .countdown.countdown-large.coming-soon .countdown-amount {
 	height: 140px;
 	line-height: 140px;
 	border-radius: 50%;

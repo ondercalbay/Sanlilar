@@ -1,9 +1,12 @@
 <?php
 
-require_once('phpmailer/PHPMailerAutoload.php');
+use PHPMailer\PHPMailer\PHPMailer;
 
-$apiKey = ''; // Your MailChimp API Key
-$listId = ''; // Your MailChimp List ID
+require 'phpmailer/src/PHPMailer.php';
+require 'phpmailer/src/SMTP.php';
+
+$apiKey = '9084de3d533812184a53480e583e6fd8-us5'; // Your MailChimp API Key
+$listId = '69350e983d'; // Your MailChimp List ID
 
 $toemails = array();
 
@@ -68,6 +71,13 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 					die;
 				}
 			}
+
+			// Uncomment the following Lines of Code if you want to Force reCaptcha Validation
+
+			// if( !isset( $_POST['g-recaptcha-response'] ) ) {
+			// 	echo '{ "alert": "error", "message": "Captcha not Submitted! Please Try Again." }';
+			// 	die;
+			// }
 
 			$mail->MsgHTML( $body );
 			$sendEmail = $mail->Send();

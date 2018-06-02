@@ -1,6 +1,9 @@
 <?php
 
-require_once('phpmailer/PHPMailerAutoload.php');
+use PHPMailer\PHPMailer\PHPMailer;
+
+require 'phpmailer/src/PHPMailer.php';
+require 'phpmailer/src/SMTP.php';
 
 $toemails = array();
 
@@ -71,6 +74,13 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 					die;
 				}
 			}
+
+			// Uncomment the following Lines of Code if you want to Force reCaptcha Validation
+
+			// if( !isset( $_POST['g-recaptcha-response'] ) ) {
+			// 	echo '{ "alert": "error", "message": "Captcha not Submitted! Please Try Again." }';
+			// 	die;
+			// }
 
 			$mail->MsgHTML( $body );
 			$sendEmail = $mail->Send();
