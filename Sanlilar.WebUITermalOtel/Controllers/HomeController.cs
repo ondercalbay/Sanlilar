@@ -14,7 +14,7 @@ namespace Sanlilar.WebUITermalOtel.Controllers
 {
     public class HomeController : Controller
     {
-        ISayfaManager sayfaManager = new SayfaManager(0, new EfSayfaDal());
+        ISayfaManager sayfaManager = new SayfaManager(null, new EfSayfaDal());
         [Route("/")]
         public ActionResult Index()
         {
@@ -68,7 +68,7 @@ namespace Sanlilar.WebUITermalOtel.Controllers
 
             }
             //return Redirect("/RezervasyonOnay");
-            return RedirectToAction("RezervasyonOnay", "Home");
+            return RedirectToAction(nameof(RezervasyonOnay));
         }
 
         private string GetMailStr(RezervasyonDto rb)

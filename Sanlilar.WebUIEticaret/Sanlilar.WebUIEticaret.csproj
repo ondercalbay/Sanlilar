@@ -3190,6 +3190,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Controllers\Yonetim\" />
     <Folder Include="include\twitter\cache\" />
     <Folder Include="Models\" />
   </ItemGroup>

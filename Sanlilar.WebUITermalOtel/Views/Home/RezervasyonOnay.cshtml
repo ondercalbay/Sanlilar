@@ -4,8 +4,31 @@
     Layout = "~/Views/Shared/_Layout1.cshtml";
 }
 
-<h2>RezervasyonOnay</h2>
+ 
+ 
 
-<div>
-    Rezervasyon isteğiniz alınmıştır. Size en yakın sürede geri dönüş sağlayacağız.
+
+
+<!-- Page Title
+============================================= -->
+<section id="page-title" onload="SetMinTarih();">
+
+    <div class="container clearfix">
+        <h1>Rezervasyon Onay</h1>
+        @*<span>Bilgileri doldurun biz sizi arayalım.</span>*@
+        <ol class="breadcrumb">
+            <li><a href="/">Anasayfa</a></li>
+            <li class="active">Rezervasyon</li>
+        </ol>
+    </div>
+</section><!-- #page-title end -->
+@*<section id="content">*@
+<div class="content-wrap">
+    <div class="container clearfix">
+        <div class="contact-widget">
+            <div class="contact-form-result">    Rezervasyon isteğiniz alınmıştır. Size en yakın sürede geri dönüş sağlayacağız.</div>
+             
+        </div>
+    </div>
 </div>
+@*</section>*@
