@@ -1,4 +1,4 @@
-﻿@model Sanlilar.Dto.SayfaDetailDto
+﻿@model Sanlilar.WebUITermalOtel.Models.RezervasyonDto
 
 @{
     ViewBag.Title = "Rezervasyon";
@@ -31,9 +31,22 @@
 </section><!-- #page-title end -->
 
 
+
 <section id="content">
     <div class="content-wrap">
+
+
+
         <div class="container clearfix">
+            @if (Model.bildirim.IsNotNull())
+            {
+                <div class="row">
+                    <div class="col-md-12">
+                        @Html.Raw(Model.bildirim)
+                    </div>
+                </div>
+            }
+
             @*<div class="contact-widget">
                 <div class="contact-form-result"></div>*@
             <form class="nobottommargin" id="template-contactform" name="template-contactform" action="Rezervasyon" method="post">
@@ -42,26 +55,31 @@
 
                 <div class="col_one_third">
                     <label for="adsoyad">ADINIZ SOYADINIZ <small>*</small></label>
-                    <input type="text" id="adsoyad" name="adsoyad" value="" class="sm-form-control required" />
+                    @Html.EditorFor(model => model.adSoyad, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.adSoyad, "", new { @class = "text-danger" })
                 </div>
 
                 <div class="col_one_third">
                     <label for="eposta">E-POSTA ADRESINIZ<small>*</small></label>
-                    <input type="email" id="eposta" name="eposta" value="" class="required email sm-form-control" />
+                    @Html.EditorFor(model => model.eposta, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.eposta, "", new { @class = "text-danger" })
                 </div>
 
                 <div class="col_one_third col_last">
                     <label for="telefon">TELEFON NUMARANIZ</label>
-                    <input type="text" id="telefon" name="telefon" value="" class="sm-form-control" />
+                    @Html.EditorFor(model => model.telefon, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.telefon, "", new { @class = "text-danger" })
                 </div>
 
                 <div class="col_one_third">
                     <label for="girisTarihi">GİRİŞ TARİHİNİZ<small>*</small></label>
-                    <input type="date" id="girisTarihi" name="girisTarihi" value="" class="sm-form-control tleft today" min="@DateTime.Today.ToString("yyyy-MM-dd")" />
+                    <input type="date" id="girisTarihi" name="girisTarihi" value=@Model.girisTarihi class="sm-form-control tleft today" min="@DateTime.Today.ToString("yyyy-MM-dd")" />
+                    @Html.ValidationMessageFor(model => model.girisTarihi, "", new { @class = "text-danger" })
                 </div>
                 <div class="col_one_third col_last">
                     <label for="cikisTarihi">ÇIKIŞ TARİHİNİZ</label>
-                    <input type="date" id="cikisTarihi" name="cikisTarihi" value="" class="sm-form-control tleft today" min="@DateTime.Today.AddDays(1).ToString("yyyy-MM-dd")" />
+                    <input type="date" id="cikisTarihi" name="cikisTarihi" value=@Model.cikisTarihi class="sm-form-control tleft today" min="@DateTime.Today.AddDays(1).ToString("yyyy-MM-dd")" />
+                    @Html.ValidationMessageFor(model => model.cikisTarihi, "", new { @class = "text-danger" })
                 </div>
 
 
@@ -87,7 +105,7 @@
 
                 <div class="col_full">
                     <label for="mesaj">İletmenizi İstedikleriniz <small>*</small></label>
-                    <textarea class="required sm-form-control" id="mesaj" name="mesaj" rows="6" cols="30"></textarea>
+                    <textarea class="required sm-form-control" id="mesaj" name="mesaj" rows="6" cols="30">@Model.mesaj</textarea>
                 </div>
 
                 <div class="col_full hidden">
@@ -96,7 +114,7 @@
 
                 <div class="col_full">
                     <button name="submit" type="submit" id="submit-button" tabindex="5" value="Submit" class="button button-3d nomargin">Rezerve Et</button>
-                    
+
                 </div>
 
             </form>

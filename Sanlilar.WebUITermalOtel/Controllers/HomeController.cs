@@ -1,6 +1,7 @@
 ﻿using Sanlilar.BL;
 using Sanlilar.CommonLibrary.Helpers;
 using Sanlilar.DL.EntityFramework;
+using Sanlilar.Dto;
 using Sanlilar.Entity;
 using Sanlilar.IL;
 using Sanlilar.WebUITermalOtel.Models;
@@ -49,26 +50,34 @@ namespace Sanlilar.WebUITermalOtel.Controllers
         [Route("/Rezervasyon")]
         public ActionResult Rezervasyon()
         {
-            return View();
+            return View(new RezervasyonDto());
         }
 
         [HttpPost]
         public ActionResult Rezervasyon(RezervasyonDto rezervasyonBilgileri)
-        {
+        {          
             try
             {
-                List<Mail> mailler = new List<Mail>();
-                string konu = "Şifa Termal Rezervasyon İstek";
-                Mail mail = new Mail(MailGonderen.sistem, ConfigHelper.Read("RezervasyonMailleri"), "", konu, GetMailStr(rezervasyonBilgileri));
-                mailler.Add(mail);
-                MailHelper.SentMail(mail);
+                if (ModelState.IsValid)
+                {
+                    List<Mail> mailler = new List<Mail>();
+                    string konu = "Şifa Termal Rezervasyon İstek";
+                    Mail mail = new Mail(MailGonderen.sistem, ConfigHelper.Read("RezervasyonMailleri"), "", konu, GetMailStr(rezervasyonBilgileri));
+                    mailler.Add(mail);
+                    MailHelper.SentMail(mail);
+                    rezervasyonBilgileri.bildirim = Helper.GetMesaj(Helper.EnuMesajTuru.success, "Rezervason bilgisi", "Rezervasyon bilginiz alınmışmıştır. </br> En yakın sürede sizinle iletişime geçeceğiz.");
+                }
+                else
+                {
+                    rezervasyonBilgileri.bildirim = Helper.GetMesaj(Helper.EnuMesajTuru.warning, "Eksik", "Eksik bilgileri doldurunuz.");
+                }   
             }
             catch (Exception ex)
             {
-
+                rezervasyonBilgileri.bildirim = Helper.GetMesaj(Helper.EnuMesajTuru.warning, "Eksik", ex.Message);                
             }
-            //return Redirect("/RezervasyonOnay");
-            return RedirectToAction(nameof(RezervasyonOnay));
+
+            return View(rezervasyonBilgileri);
         }
 
         private string GetMailStr(RezervasyonDto rb)
